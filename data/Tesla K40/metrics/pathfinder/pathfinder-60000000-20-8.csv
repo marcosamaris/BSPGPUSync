@@ -1,0 +1,4 @@
+==919== NVPROF is profiling process 919, command: ./pathfinder 60000000 20 8 0
+==919== Profiling application: ./pathfinder 60000000 20 8 0
+==919== Profiling result:
+No events/metrics were profiled.

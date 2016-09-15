@@ -1,0 +1,4 @@
+==517== NVPROF is profiling process 517, command: ./pathfinder 50000000 30 8 0
+==517== Profiling application: ./pathfinder 50000000 30 8 0
+==517== Profiling result:
+No events/metrics were profiled.

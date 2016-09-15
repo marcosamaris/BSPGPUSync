@@ -1,0 +1,4 @@
+==1985== NVPROF is profiling process 1985, command: ./pathfinder 80000000 40 16 0
+==1985== Profiling application: ./pathfinder 80000000 40 16 0
+==1985== Profiling result:
+No events/metrics were profiled.

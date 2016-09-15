@@ -1,0 +1,4 @@
+==955== NVPROF is profiling process 955, command: ./pathfinder 60000000 30 4 0
+==955== Profiling application: ./pathfinder 60000000 30 4 0
+==955== Profiling result:
+No events/metrics were profiled.

@@ -1,0 +1,4 @@
+==393== NVPROF is profiling process 393, command: ./pathfinder 40000000 100 16 0
+==393== Profiling application: ./pathfinder 40000000 100 16 0
+==393== Profiling result:
+No events/metrics were profiled.

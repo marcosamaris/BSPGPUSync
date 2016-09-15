@@ -1,0 +1,4 @@
+==1805== NVPROF is profiling process 1805, command: ./pathfinder 70000000 100 8 0
+==1805== Profiling application: ./pathfinder 70000000 100 8 0
+==1805== Profiling result:
+No events/metrics were profiled.

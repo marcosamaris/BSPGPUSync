@@ -1,0 +1,4 @@
+==25359== NVPROF is profiling process 25359, command: ./gaussian -s 1280
+==25359== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==25359== Profiling application: ./gaussian -s 1280
+==25359== Profiling result:

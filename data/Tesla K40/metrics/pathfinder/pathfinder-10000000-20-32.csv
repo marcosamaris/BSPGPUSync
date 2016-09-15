@@ -1,0 +1,4 @@
+==31264== NVPROF is profiling process 31264, command: ./pathfinder 10000000 20 32 0
+==31264== Profiling application: ./pathfinder 10000000 20 32 0
+==31264== Profiling result:
+No events/metrics were profiled.

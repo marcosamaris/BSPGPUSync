@@ -1,0 +1,4 @@
+==1900== NVPROF is profiling process 1900, command: ./pathfinder 80000000 20 16 0
+==1900== Profiling application: ./pathfinder 80000000 20 16 0
+==1900== Profiling result:
+No events/metrics were profiled.

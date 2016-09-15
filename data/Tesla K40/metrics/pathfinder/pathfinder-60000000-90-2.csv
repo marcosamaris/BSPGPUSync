@@ -1,0 +1,4 @@
+==1204== NVPROF is profiling process 1204, command: ./pathfinder 60000000 90 2 0
+==1204== Profiling application: ./pathfinder 60000000 90 2 0
+==1204== Profiling result:
+No events/metrics were profiled.

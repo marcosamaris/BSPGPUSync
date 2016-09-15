@@ -1,0 +1,4 @@
+==386== NVPROF is profiling process 386, command: ./pathfinder 40000000 100 8 0
+==386== Profiling application: ./pathfinder 40000000 100 8 0
+==386== Profiling result:
+No events/metrics were profiled.

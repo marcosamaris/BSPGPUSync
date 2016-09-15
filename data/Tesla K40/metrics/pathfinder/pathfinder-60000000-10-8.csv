@@ -1,0 +1,4 @@
+==876== NVPROF is profiling process 876, command: ./pathfinder 60000000 10 8 0
+==876== Profiling application: ./pathfinder 60000000 10 8 0
+==876== Profiling result:
+No events/metrics were profiled.

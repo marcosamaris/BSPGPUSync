@@ -1,0 +1,4 @@
+==1098== NVPROF is profiling process 1098, command: ./pathfinder 60000000 60 16 0
+==1098== Profiling application: ./pathfinder 60000000 60 16 0
+==1098== Profiling result:
+No events/metrics were profiled.

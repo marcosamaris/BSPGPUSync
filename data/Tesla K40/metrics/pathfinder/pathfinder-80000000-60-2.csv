@@ -1,0 +1,4 @@
+==2051== NVPROF is profiling process 2051, command: ./pathfinder 80000000 60 2 0
+==2051== Profiling application: ./pathfinder 80000000 60 2 0
+==2051== Profiling result:
+No events/metrics were profiled.

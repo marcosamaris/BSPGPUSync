@@ -1,0 +1,4 @@
+==890== NVPROF is profiling process 890, command: ./pathfinder 60000000 10 32 0
+==890== Profiling application: ./pathfinder 60000000 10 32 0
+==890== Profiling result:
+No events/metrics were profiled.

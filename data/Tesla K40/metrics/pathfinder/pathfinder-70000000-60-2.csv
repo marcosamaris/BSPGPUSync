@@ -1,0 +1,4 @@
+==1576== NVPROF is profiling process 1576, command: ./pathfinder 70000000 60 2 0
+==1576== Profiling application: ./pathfinder 70000000 60 2 0
+==1576== Profiling result:
+No events/metrics were profiled.

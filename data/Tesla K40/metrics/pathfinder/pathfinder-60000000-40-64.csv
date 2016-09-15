@@ -1,0 +1,4 @@
+==1027== NVPROF is profiling process 1027, command: ./pathfinder 60000000 40 64 0
+==1027== Profiling application: ./pathfinder 60000000 40 64 0
+==1027== Profiling result:
+No events/metrics were profiled.

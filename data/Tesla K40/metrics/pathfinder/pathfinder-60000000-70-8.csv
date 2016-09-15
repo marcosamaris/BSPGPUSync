@@ -1,0 +1,4 @@
+==1134== NVPROF is profiling process 1134, command: ./pathfinder 60000000 70 8 0
+==1134== Profiling application: ./pathfinder 60000000 70 8 0
+==1134== Profiling result:
+No events/metrics were profiled.

@@ -1,0 +1,4 @@
+==1091== NVPROF is profiling process 1091, command: ./pathfinder 60000000 60 8 0
+==1091== Profiling application: ./pathfinder 60000000 60 8 0
+==1091== Profiling result:
+No events/metrics were profiled.

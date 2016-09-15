@@ -1,0 +1,4 @@
+==983== NVPROF is profiling process 983, command: ./pathfinder 60000000 30 64 0
+==983== Profiling application: ./pathfinder 60000000 30 64 0
+==983== Profiling result:
+No events/metrics were profiled.

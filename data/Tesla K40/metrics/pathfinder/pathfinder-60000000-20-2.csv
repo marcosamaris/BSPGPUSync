@@ -1,0 +1,4 @@
+==904== NVPROF is profiling process 904, command: ./pathfinder 60000000 20 2 0
+==904== Profiling application: ./pathfinder 60000000 20 2 0
+==904== Profiling result:
+No events/metrics were profiled.
