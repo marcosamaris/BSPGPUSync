@@ -15,6 +15,7 @@
 #include <avilib.h>
 #include <avimod.h>
 #include <cuda.h>
+#include <assert.h>
 
 //======================================================================================================================================================
 //	STRUCTURES, GLOBAL STRUCTURE VARIABLES
@@ -44,8 +45,7 @@ __constant__ params_unique d_unique[ALL_POINTS];
 //	WRITE DATA FUNCTION
 //===============================================================================================================================================================================================================200
 
-void write_data(	char* filename,
-			int frameNo,
+void write_data(int frameNo,
 			int frames_processed,
 			int endoPoints,
 			int* input_a,
@@ -58,7 +58,10 @@ void write_data(	char* filename,
 	//	VARIABLES
 	//================================================================================80
 
-	FILE* fid;
+	FILE* fidA;
+	FILE* fidB;
+	FILE* fid2A;
+	FILE* fid2B;
 	int i,j;
 	char c;
 
@@ -66,51 +69,205 @@ void write_data(	char* filename,
 	//	OPEN FILE FOR READING
 	//================================================================================80
 
-	fid = fopen(filename, "w+");
-	if( fid == NULL ){
-		printf( "The file was not opened for writing\n" );
+	char fileA[20] = "result_A_";    
+    char bufferA[5] = " ";
+    sprintf(bufferA, "%d", frames_processed);
+    strcat(fileA, bufferA);
+    strcat(fileA, ".txt");
+
+	fidA = fopen(fileA, "w");
+	if( fidA == NULL ){
+		printf( "The file A was not opened for writing\n" );
 		return;
 	}
+	
+    char fileB[20] = "result_B_";    
+    char bufferB[5] = " ";
+    sprintf(bufferB, "%d", frames_processed);
+    strcat(fileB, bufferB);
+    strcat(fileB, ".txt");
 
+	fidB = fopen(fileB, "w");
+	if( fidB == NULL ){
+		printf( "The file B was not opened for writing\n" );
+		return;
+	}
+	
+    char file2A[20] = "result_2A_";    
+    char buffer2A[5] = " ";
+    sprintf(buffer2A, "%d", frames_processed);
+    strcat(file2A, buffer2A);
+    strcat(file2A, ".txt");
+
+	fid2A = fopen(file2A, "w");
+	if( fid2A == NULL ){
+		printf( "The file 2A was not opened for writing\n" );
+		return;
+	}
+	
+    char file2B[20] = "result_2B_";    
+    char buffer2B[5] = " ";
+    sprintf(buffer2B, "%d", frames_processed);
+    strcat(file2B, buffer2B);
+    strcat(file2B, ".txt");
+
+	fid2B = fopen(file2B, "w");
+	if( fid2B == NULL ){
+		printf( "The file 2B was not opened for writing\n" );
+		return;
+	}
 
 	//================================================================================80
 	//	WRITE VALUES TO THE FILE
 	//================================================================================80
-      fprintf(fid, "Total AVI Frames: %d\n", frameNo);	
-      fprintf(fid, "Frames Processed: %d\n", frames_processed);	
-      fprintf(fid, "endoPoints: %d\n", endoPoints);
-      fprintf(fid, "epiPoints: %d", epiPoints);
-	for(j=0; j<frames_processed;j++)
-	  {
-	    fprintf(fid, "\n---Frame %d---",j);
-	    fprintf(fid, "\n--endo--\n",j);
-	    for(i=0; i<endoPoints; i++){
-	      fprintf(fid, "%d\t", input_a[j+i*frameNo]);
+
+	for(j=0; j<frameNo*endoPoints;j++){
+          fprintf(fidA, "%d ", input_a[j]);	   	  
+          fprintf(fidB, "%d ", input_b[j]);
 	    }
-	    fprintf(fid, "\n");
-	    for(i=0; i<endoPoints; i++){
-	      // if(input_b[j*size+i] > 2000) input_b[j*size+i]=0;
-	      fprintf(fid, "%d\t", input_b[j+i*frameNo]);
+
+	    for(j=0; j<frameNo*epiPoints;j++){
+          fprintf(fid2A, "%d ", input_2a[j]);
+          fprintf(fid2B, "%d ", input_2b[j]);
 	    }
-	    fprintf(fid, "\n--epi--\n",j);
-	    for(i=0; i<epiPoints; i++){
-	      //if(input_2a[j*size_2+i] > 2000) input_2a[j*size_2+i]=0;
-	      fprintf(fid, "%d\t", input_2a[j+i*frameNo]);
-	    }
-	    fprintf(fid, "\n");
-	    for(i=0; i<epiPoints; i++){
-	      //if(input_2b[j*size_2+i] > 2000) input_2b[j*size_2+i]=0;
-	      fprintf(fid, "%d\t", input_2b[j+i*frameNo]);
-	    }
-	  }
+	  
 	// 	================================================================================80
 	//		CLOSE FILE
 		  //	================================================================================80
 
-	fclose(fid);
+	fclose(fidA);
+	fclose(fidB);
+	fclose(fid2A);
+	fclose(fid2B);
 
 }
 
+
+
+void assert_data(int frameNo,
+			int frames_processed,
+			int endoPoints,
+			int* input_a,
+			int* input_b,
+			int epiPoints,
+			int* input_2a,
+			int* input_2b){
+
+        //================================================================================80
+        //      VARIABLES
+        //================================================================================80
+
+        FILE* fidA;
+        FILE* fidB;
+        FILE* fid2A;
+        FILE* fid2B;
+
+        int i,j;
+        char c;
+
+        //================================================================================80
+        //      OPEN FILE FOR READING
+        //================================================================================80
+    char fileA[20] = "result_A_";
+    char bufferA[5] = " ";
+    sprintf(bufferA, "%d", frames_processed);
+    strcat(fileA, bufferA);
+    strcat(fileA, ".txt");
+
+    fidA = fopen(fileA, "r");
+    assert(fidA);
+
+    char fileB[20] = "result_B_";
+    char bufferB[5] = " ";
+    sprintf(bufferB, "%d", frames_processed);
+    strcat(fileB, bufferB);
+    strcat(fileB, ".txt");
+
+    fidB = fopen(fileB, "r");
+    assert(fidB);
+
+    char file2A[20] = "result_2A_";
+    char buffer2A[5] = " ";
+    sprintf(buffer2A, "%d", frames_processed);
+    strcat(file2A, buffer2A);
+    strcat(file2A, ".txt");
+
+    fid2A = fopen(file2A, "r");
+    assert(fid2A);
+
+    char file2B[20] = "result_2B_";
+    char buffer2B[5] = " ";
+    sprintf(buffer2B, "%d", frames_processed);
+    strcat(file2B, buffer2B);
+    strcat(file2B, ".txt");
+
+    fid2B = fopen(file2B, "r");
+    assert(fid2B);
+
+    int* Tempinput_a = (int*) malloc(endoPoints * frameNo * sizeof(int));
+
+    int* Tempinput_b = (int*) malloc(endoPoints * frameNo *  sizeof(int));
+
+    int* Tempinput_2a = (int*) malloc(epiPoints * frameNo *  sizeof(int));
+
+    int* Tempinput_2b = (int*) malloc(epiPoints * frameNo *  sizeof(int));
+
+    	for(j=0; j<frameNo*endoPoints;j++){
+            fscanf(fidA, "%d", &Tempinput_a[j]);
+            fscanf(fidB, "%d", &Tempinput_b[j]);
+	    }
+
+	    for(j=0; j<frameNo*epiPoints;j++){
+            fscanf(fid2A, "%d", &Tempinput_2a[j]);
+            fscanf(fid2B, "%d", &Tempinput_2b[j]);
+	    }
+	  
+
+        //      ==============================================================================
+        //              CLOSE FILE
+        //    ================================================================================
+
+        fclose(fidA);
+        fclose(fidB);
+        fclose(fid2A);
+        fclose(fid2B);
+        
+
+
+        printf("Entering assertions\n");
+        //printf("%d x %d = %d endoPoints | frames=%d\n",frames_processed,endoPoints, frames_processed*endoPoints, frameNo);
+        //printf("%d x %d = %d epiPoints | frames=%d\n",frames_processed,epiPoints, frames_processed*epiPoints, frameNo);
+
+    	for(j=0; j<frameNo*endoPoints;j++){
+           // printf("%d)  %d - %d = %d  In_A\n",j, Tempinput_a[j],  input_a[j], abs(Tempinput_a[j] - input_a[j]));
+            //printf("%d)  %d - %d = %d  In_B\n",j, Tempinput_b[j],  input_b[j], abs(Tempinput_b[j] - input_b[j]));
+            if(Tempinput_a[j] != 0)
+                assert(abs(Tempinput_a[j] - input_a[j]) < 0.001);
+            if(Tempinput_b[j] != 0)            
+                assert(abs(Tempinput_b[j] - input_b[j]) < 0.001);                      
+	    }
+        for(j=0; j<frameNo*epiPoints;j++){
+            //printf("%d)  %d - %d = %d  In_2A\n",j, Tempinput_2a[j],  input_2a[j], abs(Tempinput_2a[j] - input_2a[j]));
+            //printf("%d)  %d - %d = %d  In_2B\n",j, Tempinput_2b[j],  input_2b[j], abs(Tempinput_2b[j] - input_2b[j]));
+            if(Tempinput_2a[j] != 0)
+                assert(abs(Tempinput_2a[j] - input_2a[j]) < 0.001);
+            if(Tempinput_2b[j] != 0)            
+                assert(abs(Tempinput_2b[j] - input_2b[j]) < 0.001);                      
+	    }
+
+	    
+    free(Tempinput_a);
+    free(Tempinput_b);
+    free(Tempinput_2a);
+    free(Tempinput_2b);
+
+
+}
+
+
+#ifndef devId
+#define devId 0
+#endif
 
 //===============================================================================================================================================================================================================
 //===============================================================================================================================================================================================================
@@ -141,8 +298,8 @@ int main(int argc, char *argv []){
 	// 	FRAME
 	//======================================================================================================================================================
 
-	if(argc!=4){
-		printf("ERROR: usage: heartwall <inputfile> <num of frames> <device> \n");
+	if(argc!=3){
+		printf("ERROR: usage: heartwall <inputfile> <num of frames>\n");
 		exit(1);
 	}
 	
@@ -153,13 +310,9 @@ int main(int argc, char *argv []){
 		   AVI_print_error((char *) "Error with AVI_open_input_file");
 		   return -1;
 	}
-    
 
-    //printf("\n First = %d\n", atoi(argv[2]));
-    printf("GPU = %d \n", atoi(argv[3]));
 
-    //int devId = atoi(argv[3]);
-    cudaSetDevice(atoi(argv[3]));
+    cudaSetDevice(devId);
     cudaDeviceReset();
 
 	// common
@@ -694,31 +847,6 @@ int main(int argc, char *argv []){
 
 	cudaMemcpy(common.tEpiRowLoc, common.d_tEpiRowLoc, common.epi_mem * common.no_frames, cudaMemcpyDeviceToHost);
 	cudaMemcpy(common.tEpiColLoc, common.d_tEpiColLoc, common.epi_mem * common.no_frames, cudaMemcpyDeviceToHost);
-
-
-
-#ifdef OUTPUT
-
-	//==================================================50
-	//	DUMP DATA TO FILE
-	//==================================================50
-	write_data(	"result.txt",
-			common.no_frames,
-			frames_processed,		
-				common.endoPoints,
-				common.tEndoRowLoc,
-				common.tEndoColLoc,
-				common.epiPoints,
-				common.tEpiRowLoc,
-				common.tEpiColLoc);
-
-	//==================================================50
-	//	End
-	//==================================================50
-
-#endif
-
-
 
 	//======================================================================================================================================================
 	//	DEALLOCATION
