@@ -1,6 +1,7 @@
 include ../../common/make.config
+include ../../common/init.config
 
-CC := $(CUDA_DIR)/bin/nvcc
+CC := $(CUDA_DIR)/bin/nvcc $(devId) $(FLAGArch) # $(FLAGSpecial)
 INCLUDE := $(CUDA_DIR)/include
 
 SRC = pathfinder.cu

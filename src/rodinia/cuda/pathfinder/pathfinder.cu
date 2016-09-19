@@ -5,7 +5,7 @@
 
 #define BLOCK_SIZE 256
 #define STR_SIZE 256
-#define DEVICE 0
+
 #define HALO 1 // halo width along one direction when advancing to the next iteration
 
 #define BENCH_PRINT
@@ -20,6 +20,20 @@ int* result;
 int pyramid_height;
 
 //#define BENCH_PRINT
+
+#ifndef devId
+#define devId 0
+#endif
+
+#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
+inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)
+{
+   if (code != cudaSuccess) 
+   {
+      fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+      if (abort) exit(code);
+   }
+}
 
 
 void
@@ -207,9 +221,8 @@ int calc_path(int *gpuWall, int *gpuResult[2], int rows, int cols, \
 
 int main(int argc, char** argv)
 {
-    int num_devices;
-    cudaGetDeviceCount(&num_devices);
-    if (num_devices > 1) cudaSetDevice(DEVICE);
+    gpuErrchk(cudaSetDevice(devId) );
+    gpuErrchk(cudaDeviceReset());
 
     run(argc,argv);
 
