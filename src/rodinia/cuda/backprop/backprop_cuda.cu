@@ -12,6 +12,10 @@
 #include "backprop_cuda_kernel.cu"
 #include "backprop.h"
 
+#ifndef devId
+#define devId 0
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////
 
 extern "C"
@@ -52,6 +56,11 @@ int
 main( int argc, char** argv) 
 {
 	setup(argc, argv);
+
+  #ifdef GPU 
+  printf("Device = %d ",devId);
+  cudaSetDevice(devId);
+  #endif
 }
 
 
@@ -65,7 +74,10 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   hid = net->hidden_n;
   out = net->output_n;   
    
-#ifdef GPU  
+#ifdef GPU 
+  printf("Device = %d ",devId);
+  cudaSetDevice(devId);
+
   int m = 0;
   float *input_hidden_cuda;
   float *input_cuda;

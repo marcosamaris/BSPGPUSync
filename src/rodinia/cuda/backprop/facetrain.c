@@ -6,6 +6,10 @@
 #include "backprop.h"
 #include "omp.h"
 
+#ifndef devId
+#define devId 0
+#endif
+
 extern char *strcpy();
 extern void exit();
 
@@ -48,6 +52,7 @@ char *argv[];
   seed = 7;
 
   #ifdef GPU
+  printf("Facetrain Device = %d \n",devId);
   cudaSetDevice(devId);
   #endif
     

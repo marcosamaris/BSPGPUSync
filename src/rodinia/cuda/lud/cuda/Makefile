@@ -1,3 +1,5 @@
+include ../../common/devId.config
+
 CC = gcc
 NVCC = nvcc
 
@@ -11,7 +13,7 @@ NVCCFLAGS += -I../common \
 			 -arch=sm_35 \
 			 -lm \
 			 $(SPACE)\
-            -D devId=0 -ccbin gcc-4.8
+            -D -ccbin gcc-4.8 devId=$devId
 
 CFLAGS += -I../common \
 					-I/usr/include/cuda \
