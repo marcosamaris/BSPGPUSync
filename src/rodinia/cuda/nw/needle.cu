@@ -48,6 +48,21 @@ double gettime() {
   return t.tv_sec+t.tv_usec*1e-6;
 }
 
+#ifndef devId
+#define devId 0
+#endif
+
+#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
+inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)
+{
+   if (code != cudaSuccess) 
+   {
+      fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+      if (abort) exit(code);
+   }
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // Program main
 ////////////////////////////////////////////////////////////////////////////////
@@ -95,6 +110,8 @@ void runTest( int argc, char** argv)
 	exit(1);
 	}
 	
+    gpuErrchk(cudaSetDevice(devId) );
+    gpuErrchk(cudaDeviceReset());
 
 	max_rows = max_rows + 1;
 	max_cols = max_cols + 1;

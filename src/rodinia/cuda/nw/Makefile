@@ -1,6 +1,7 @@
 include ../../common/make.config
+include ../../common/init.config
 
-CC := $(CUDA_DIR)/bin/nvcc
+CC := $(CUDA_DIR)/bin/nvcc $(devId) $(FLAGSpecial) $(FLAGArch)
 
 INCLUDE := $(CUDA_DIR)/include
 
