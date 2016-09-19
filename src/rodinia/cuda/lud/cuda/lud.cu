@@ -49,9 +49,29 @@ extern void
 lud_cuda(float *d_m, int matrix_dim);
 
 
+#ifndef devId
+#define devId 0
+#endif
+
+#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
+inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)
+{
+   if (code != cudaSuccess) 
+   {
+      fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+      if (abort) exit(code);
+   }
+}
+
 int
 main ( int argc, char *argv[] )
 {
+
+  printf("Device = %d\n", devId);
+
+  gpuErrchk(cudaSetDevice(devId) );
+  gpuErrchk(cudaDeviceReset());
+
   printf("WG size of kernel = %d X %d\n", BLOCK_SIZE, BLOCK_SIZE);
 
   int matrix_dim = 32; /* default matrix_dim */
@@ -60,6 +80,8 @@ main ( int argc, char *argv[] )
   const char *input_file = NULL;
   float *m, *d_m, *mm;
   stopwatch sw;
+
+
 
   while ((opt = getopt_long(argc, argv, "::vs:i:", 
                             long_options, &option_index)) != -1 ) {

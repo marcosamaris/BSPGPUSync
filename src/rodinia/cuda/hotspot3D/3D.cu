@@ -147,7 +147,7 @@ void usage(int argc, char **argv)
 
 int main(int argc, char** argv)
 {
-    if (argc != 7)
+    if (argc != 8)
     {
         usage(argc,argv);
     }
@@ -161,6 +161,12 @@ int main(int argc, char** argv)
     int numCols = atoi(argv[1]);
     int numRows = atoi(argv[1]);
     int layers = atoi(argv[2]);
+
+    int devId = atoi(argv[7]);
+
+    cudaSetDevice(devId) ;
+    cudaDeviceReset();
+      
 
     /* calculating parameters*/
 

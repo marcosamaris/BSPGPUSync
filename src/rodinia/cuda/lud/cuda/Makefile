@@ -10,13 +10,14 @@ NVCCFLAGS += -I../common \
 			 -use_fast_math \
 			 -arch=sm_35 \
 			 -lm \
-			 $(SPACE)
+			 $(SPACE)\
+            -D devId=0 -ccbin gcc-4.8
 
 CFLAGS += -I../common \
 					-I/usr/include/cuda \
 		  -O3 \
 		  -Wall \
-		  $(SPACE)
+		  $(SPACE) 
 
 # Add source files here
 EXECUTABLE  := lud_cuda

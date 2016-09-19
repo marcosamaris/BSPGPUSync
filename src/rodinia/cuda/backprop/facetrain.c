@@ -45,7 +45,12 @@ char *argv[];
   }
   
 
-  seed = 7;   
+  seed = 7;
+
+  #ifdef GPU
+  cudaSetDevice(devId);
+  #endif
+    
   bpnn_initialize(seed);
   backprop_face();
 

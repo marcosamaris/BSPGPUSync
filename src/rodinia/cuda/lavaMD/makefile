@@ -12,13 +12,13 @@ ifdef OUTPUT
 override OUTPUT = -DOUTPUT
 endif
 
-C_C = gcc
+C_C = gcc -D devId=0
 OMP_LIB = -lgomp
 OMP_FLAG = -fopenmp
 
 CUD_C = $(CUDA_DIR)/bin/nvcc
 # OMP_FLAG = 	-Xcompiler paste_one_here
-CUDA_FLAG = -arch sm_35
+CUDA_FLAG = -arch sm_35 
 
 # link objects (binaries) together
 a.out:		main.o \

@@ -20,6 +20,7 @@
 #include <stdio.h>					// (in path known to compiler)			needed by printf
 #include <stdlib.h>					// (in path known to compiler)			needed by malloc
 #include <stdbool.h>				// (in path known to compiler)			needed by true/false
+#include <assert.h>
 
 //======================================================================================================================================================150
 //	UTILITIES
@@ -43,6 +44,11 @@
 //========================================================================================================================================================================================================200
 //	MAIN FUNCTION
 //========================================================================================================================================================================================================200
+
+
+#ifndef devId
+#define devId 0
+#endif
 
 int 
 main(	int argc, 
@@ -79,6 +85,11 @@ main(	int argc,
 	fp* qv_cpu;
 	FOUR_VECTOR* fv_cpu;
 	int nh;
+
+    //printf("Device = %d\n", devId);
+
+    cudaSetDevice(devId) ;
+    cudaDeviceReset();
 
 	time1 = get_time();
 
@@ -225,7 +236,7 @@ main(	int argc,
 	//====================================================================================================100
 
 	// random generator seed set to random value - time in this case
-	srand(time(NULL));
+	srand(5);
 
 	// input (distances)
 	rv_cpu = (FOUR_VECTOR*)malloc(dim_cpu.space_mem);
@@ -273,18 +284,6 @@ main(	int argc,
 	//======================================================================================================================================================150
 	//	SYSTEM MEMORY DEALLOCATION
 	//======================================================================================================================================================150
-
-	// dump results
-#ifdef OUTPUT
-        FILE *fptr;
-	fptr = fopen("result.txt", "w");	
-	for(i=0; i<dim_cpu.space_elem; i=i+1){
-        	fprintf(fptr, "%f, %f, %f, %f\n", fv_cpu[i].v, fv_cpu[i].x, fv_cpu[i].y, fv_cpu[i].z);
-	}
-	fclose(fptr);
-#endif       	
-
-
 
 	free(rv_cpu);
 	free(qv_cpu);

@@ -281,7 +281,7 @@ void run(int argc, char** argv)
     int total_iterations = 60;
     int pyramid_height = 1; // number of iterations
 	
-	if (argc != 7)
+	if (argc != 8)
 		usage(argc, argv);
 	if((grid_rows = atoi(argv[1]))<=0||
 	   (grid_cols = atoi(argv[1]))<=0||
@@ -292,6 +292,9 @@ void run(int argc, char** argv)
 	tfile=argv[4];
     pfile=argv[5];
     ofile=argv[6];
+    int devId = atoi(argv[7]);
+    cudaSetDevice(devId) ;
+    cudaDeviceReset() ;
 	
     size=grid_rows*grid_cols;
 

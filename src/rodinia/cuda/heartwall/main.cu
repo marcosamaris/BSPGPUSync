@@ -141,8 +141,8 @@ int main(int argc, char *argv []){
 	// 	FRAME
 	//======================================================================================================================================================
 
-	if(argc!=3){
-		printf("ERROR: usage: heartwall <inputfile> <num of frames>\n");
+	if(argc!=4){
+		printf("ERROR: usage: heartwall <inputfile> <num of frames> <device> \n");
 		exit(1);
 	}
 	
@@ -153,6 +153,14 @@ int main(int argc, char *argv []){
 		   AVI_print_error((char *) "Error with AVI_open_input_file");
 		   return -1;
 	}
+    
+
+    //printf("\n First = %d\n", atoi(argv[2]));
+    printf("GPU = %d \n", atoi(argv[3]));
+
+    //int devId = atoi(argv[3]);
+    cudaSetDevice(atoi(argv[3]));
+    cudaDeviceReset();
 
 	// common
 	common.no_frames = AVI_video_frames(frames);

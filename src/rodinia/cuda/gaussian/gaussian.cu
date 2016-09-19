@@ -48,7 +48,7 @@ FILE *fp;
 
 void InitProblemOnce(char *filename);
 void InitPerRun();
-void ForwardSub();
+void ForwardSub(int gpuId);
 void BackSub();
 __global__ void Fan1(float *m, float *a, int Size, int t);
 __global__ void Fan2(float *m, float *a, float *b,int Size, int j1, int t);
@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
     int verbose = 1;
     int i, j;
     char flag;
-    if (argc < 2) {
+    if (argc < 3) {
         printf("Usage: gaussian -f filename / -s size [-q]\n\n");
         printf("-q (quiet) suppresses printing the matrix and result values.\n");
         printf("-f (filename) path of input file\n");
@@ -158,11 +158,13 @@ int main(int argc, char *argv[])
     //InitProblemOnce(filename);
     InitPerRun();
     //begin timing
+    
     struct timeval time_start;
     gettimeofday(&time_start, NULL);	
     
     // run kernels
-    ForwardSub();
+    int gpuId = atoi(argv[4]);
+    ForwardSub(gpuId);
     
     //end timing
     struct timeval time_end;
@@ -323,10 +325,12 @@ __global__ void Fan2(float *m_cuda, float *a_cuda, float *b_cuda,int Size, int j
  ** elimination.
  **------------------------------------------------------
  */
-void ForwardSub()
+void ForwardSub(int gpuId)
 {
 	int t;
     float *m_cuda,*a_cuda,*b_cuda;
+
+    cudaSetDevice(gpuId);
 	
 	// allocate memory on GPU
 	cudaMalloc((void **) &m_cuda, Size * Size * sizeof(float));
