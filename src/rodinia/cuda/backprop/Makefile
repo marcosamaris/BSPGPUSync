@@ -1,5 +1,5 @@
 include ../../common/make.config
-include ../../common/Init.config
+include ../../common/init.config
 
 # C compiler
 CC = gcc

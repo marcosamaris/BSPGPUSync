@@ -40,6 +40,10 @@
         #define BLOCK_SIZE_XY 4
 #endif
 
+#ifndef devId
+#define devId 0
+#endif
+
 int Size;
 float *a, *b, *finalVec;
 float *m;
@@ -48,7 +52,7 @@ FILE *fp;
 
 void InitProblemOnce(char *filename);
 void InitPerRun();
-void ForwardSub(int gpuId);
+void ForwardSub();
 void BackSub();
 __global__ void Fan1(float *m, float *a, int Size, int t);
 __global__ void Fan2(float *m, float *a, float *b,int Size, int j1, int t);
@@ -163,8 +167,7 @@ int main(int argc, char *argv[])
     gettimeofday(&time_start, NULL);	
     
     // run kernels
-    int gpuId = atoi(argv[4]);
-    ForwardSub(gpuId);
+    ForwardSub();
     
     //end timing
     struct timeval time_end;
@@ -325,12 +328,12 @@ __global__ void Fan2(float *m_cuda, float *a_cuda, float *b_cuda,int Size, int j
  ** elimination.
  **------------------------------------------------------
  */
-void ForwardSub(int gpuId)
+void ForwardSub()
 {
 	int t;
     float *m_cuda,*a_cuda,*b_cuda;
 
-    cudaSetDevice(gpuId);
+    cudaSetDevice(devId);
 	
 	// allocate memory on GPU
 	cudaMalloc((void **) &m_cuda, Size * Size * sizeof(float));
