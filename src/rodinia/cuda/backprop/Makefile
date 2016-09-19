@@ -13,7 +13,7 @@ NVCC_FLAGS = -I$(CUDA_DIR)/include
 ifeq ($(dbg),1)
 	NVCC_FLAGS += -g -O0
 else
-	NVCC_FLAGS += -O2 $(FLAGArch) $(FLAGSpecial) $(devId)
+	NVCC_FLAGS += -O2 $(FLAGArch) $(FLAGSpecial) $(devId) 
 endif
 
 # 'make emu=1' compiles the CUDA kernels for emulation
