@@ -67,8 +67,6 @@ int
 main ( int argc, char *argv[] )
 {
 
-  printf("Device = %d\n", devId);
-
   gpuErrchk(cudaSetDevice(devId) );
   gpuErrchk(cudaDeviceReset());
 
