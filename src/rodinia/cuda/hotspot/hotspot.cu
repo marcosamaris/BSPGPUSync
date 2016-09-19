@@ -262,6 +262,12 @@ void usage(int argc, char **argv)
 	exit(1);
 }
 
+
+#ifndef devId
+#define devId 0
+#endif
+
+
 int main(int argc, char** argv)
 {
   printf("WG size of kernel = %d X %d\n", BLOCK_SIZE, BLOCK_SIZE);
@@ -281,7 +287,7 @@ void run(int argc, char** argv)
     int total_iterations = 60;
     int pyramid_height = 1; // number of iterations
 	
-	if (argc != 8)
+	if (argc != 7)
 		usage(argc, argv);
 	if((grid_rows = atoi(argv[1]))<=0||
 	   (grid_cols = atoi(argv[1]))<=0||
@@ -292,7 +298,7 @@ void run(int argc, char** argv)
 	tfile=argv[4];
     pfile=argv[5];
     ofile=argv[6];
-    int devId = atoi(argv[7]);
+
     cudaSetDevice(devId) ;
     cudaDeviceReset() ;
 	
