@@ -81,7 +81,7 @@ main.o:		main.h \
 	$(CUD_C)			./util/device/device.cu \
 						-c \
 						-o ./util/device/device.o \
-						-O3
+						-O3 $(FLAGSpecial)
 
 # delete all object and executable files
 clean:
