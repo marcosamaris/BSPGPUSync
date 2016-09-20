@@ -18,7 +18,7 @@ cd rodinia/cuda/
 for app in "${apps[@]}"; do 
     mkdir -p ../../logs/${app}
     cd ${app}
-    #make clean; make
+    make clean; make
     
     if [[ "${app}" == "backprop" ]]; then
         for i in `seq 8192 1024 65536`; do
@@ -28,10 +28,10 @@ for app in "${apps[@]}"; do
     
     if [[ "${app}" == "gaussian" ]]; then
         for i in 8 16 32 64 128 `seq 256 256 2048 `; do
-            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -f ../../data/gaussian/matrix$i.txt 2> ../../../logs/${app}/${app}-f-$i.csv
+            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -f ../../data/gaussian/matrix$i.txt -q 2> ../../../logs/${app}/${app}-f-$i.csv
         done
         for i in 8 16 32 64 128 `seq 256 256 2048 `; do
-            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -s $i 2> ../../../logs/${app}/${app}-s-$i.csv
+            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -s $i -q 2> ../../../logs/${app}/${app}-s-$i.csv
         done
     fi
     
@@ -43,7 +43,7 @@ for app in "${apps[@]}"; do
     
     if [[ "${app}" == "hotspot" ]]; then
         for i in 64 512 1024; do
-            for j in 2 4 8 16 32 64 128 256 512 `seq 1024 1024 8192 `; do
+            for j in 2 4 8 16 32 64 128 `seq 256 256 8192 `; do
                 nvprof   --print-gpu-trace --csv -u s ${execApps["hotspot"]} $i 2 $j ../../data/hotspot/temp_$i ../../data/hotspot/power_$i output.out 2> ../../../logs/${app}/${app}-$i-$j.csv
             done
         done
@@ -51,7 +51,7 @@ for app in "${apps[@]}"; do
     
     if [[ "${app}" == "hotspot3D" ]]; then        
         for i in 8; do
-            for j in 2 4 8 16 32 64 128 256 512 `seq 1024 1024 8192 `; do
+            for j in 2 4 8 16 32 64 128 128 `seq 256 256 8192 `; do
                 nvprof   --print-gpu-trace --csv -u s ${execApps["hotspot3D"]} 512 8 $j ../../data/hotspot3D/power_512x$i ../../data/hotspot3D/temp_512x$i output.out 2> ../../../logs/${app}/${app}-$i-$j.csv
             done
         done
@@ -64,7 +64,7 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "lud" ]]; then
-        for i in `seq 1024 1024 8192`; do
+        for i in `seq 256 256 8192`; do
             nvprof   --print-gpu-trace --csv -u s ${execApps["lud"]} -s $i -v 2> ../../../logs/${app}/${app}-$i.csv
         done
     fi
