@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#declare -a apps=( particlefilter srad streamcluster bfs b+tree cfd dwt2d huffman hybridsort kmeans)
+
 declare -a apps=( backprop gaussian heartwall hotspot hotspot3D lud lavaMD nw pathfinder )
 
 declare -A execApps
@@ -8,8 +10,7 @@ execApps["gaussian"]="./gaussian "
 execApps["heartwall"]="./heartwall " 
 execApps["hotspot"]="./hotspot " 
 execApps["hotspot3D"]="./3D " 
-execApps["lavaMD"]="././lavaMD " 
-execApps["lud"]="./lud_cuda " 
+execApps["lud"]="cuda/lud_cuda " 
 execApps["nw"]="./needle " 
 execApps["pathfinder"]="./pathfinder "
 
@@ -18,7 +19,7 @@ cd rodinia/cuda/
 for app in "${apps[@]}"; do 
     mkdir -p ../../logs/${app}
     cd ${app}
-    #make clean; make
+    make clean; make
     
     if [[ "${app}" == "backprop" ]]; then
         for i in `seq 8192 1024 65536`; do
@@ -27,10 +28,10 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "gaussian" ]]; then
-        for i in 16 32 64 128 `seq 256 256 2048 `; do
+        for i in `seq 16 16 2048 `; do
             nvprof  --metrics all --events all --print-gpu-trace --csv -u s ${execApps["gaussian"]} -f ../../data/gaussian/matrix$i.txt -q 2> ../../../logs/${app}/${app}-f-$i.csv
         done
-        for i in 16 32 64 128 `seq 256 256 2048 `; do
+        for i in `seq 16 16 2048 `; do
             nvprof  --metrics all --events all --print-gpu-trace --csv -u s ${execApps["gaussian"]} -s $i -q 2> ../../../logs/${app}/${app}-s-$i.csv
         done
     fi
@@ -58,7 +59,7 @@ for app in "${apps[@]}"; do
     fi      
     
     if [[ "${app}" == "lavaMD" ]]; then
-        for i in `seq 10 5 100`; do
+        for i in `seq 5 1 100`; do
             nvprof  --metrics all --events all --print-gpu-trace --csv -u s ${execApps["lavaMD"]} -boxes1d $i 2> ../../../logs/${app}/${app}-$i.csv
         done
     fi
@@ -78,14 +79,14 @@ for app in "${apps[@]}"; do
     fi 
     
     if [[ "${app}" == "pathfinder" ]]; then 
-        for i in `seq 10000000 10000000 100000000`; do
+        for i in `seq 100000 100000 1000000`; do
             for j in `seq 10 10 100`; do
                 for k in 2 4 8 16 32 64; do
-                    nvprof   --print-gpu-trace --csv -u s ${execApps["pathfinder"]} $i $j $k 2> ../../../logs/${app}/${app}-$i-$j-$k.csv
+                    nvprof  --metrics all --events all --print-gpu-trace --csv -u s ${execApps["pathfinder"]} $i $j $k 0 2> ../../../logs/${app}/${app}-$i-$j-$k.csv
                 done
             done
         done
-    fi       
+    fi     
   
     cd ..
 done
