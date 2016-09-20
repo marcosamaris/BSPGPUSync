@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#declare -a apps=( particlefilter srad streamcluster bfs b+tree cfd dwt2d huffman hybridsort kmeans)
-
 declare -a apps=(  backprop gaussian heartwall hotspot hotspot3D lud lavaMD nw pathfinder )
 
 declare -A execApps
@@ -10,7 +8,8 @@ execApps["gaussian"]="./gaussian "
 execApps["heartwall"]="./heartwall " 
 execApps["hotspot"]="./hotspot " 
 execApps["hotspot3D"]="./3D " 
-execApps["lud"]="cuda/lud_cuda " 
+execApps["lavaMD"]="././lavaMD " 
+execApps["lud"]="./lud_cuda " 
 execApps["nw"]="./needle " 
 execApps["pathfinder"]="./pathfinder "
 
@@ -28,10 +27,10 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "gaussian" ]]; then
-        for i in 16 32 64 128 `seq 256 256 2048 `; do
+        for i in 8 16 32 64 128 `seq 256 256 2048 `; do
             nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -f ../../data/gaussian/matrix$i.txt 2> ../../../logs/${app}/${app}-f-$i.csv
         done
-        for i in 16 32 64 128 `seq 256 256 2048 `; do
+        for i in 8 16 32 64 128 `seq 256 256 2048 `; do
             nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -s $i 2> ../../../logs/${app}/${app}-s-$i.csv
         done
     fi
@@ -82,11 +81,11 @@ for app in "${apps[@]}"; do
         for i in `seq 10000000 10000000 100000000`; do
             for j in `seq 10 10 100`; do
                 for k in 2 4 8 16 32 64; do
-                    nvprof   --print-gpu-trace --csv -u s ${execApps["pathfinder"]} $i $j $k 0 2> ../../../logs/${app}/${app}-$i-$j-$k.csv
+                    nvprof   --print-gpu-trace --csv -u s ${execApps["pathfinder"]} $i $j $k 2> ../../../logs/${app}/${app}-$i-$j-$k.csv
                 done
             done
         done
-    fi     
+    fi       
   
     cd ..
 done
