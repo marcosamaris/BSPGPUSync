@@ -29,10 +29,10 @@ for app in "${apps[@]}"; do
     
     if [[ "${app}" == "gaussian" ]]; then
         for i in `seq 16 16 2048 `; do
-            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -f ../../data/gaussian/matrix$i.txt 2> ../../../logs/${app}/${app}-f-$i.csv
+            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -f ../../data/gaussian/matrix$i.txt -q 2> ../../../logs/${app}/${app}-f-$i.csv
         done
         for i in `seq 16 16 2048 `; do
-            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -s $i 2> ../../../logs/${app}/${app}-s-$i.csv
+            nvprof   --print-gpu-trace --csv -u s ${execApps["gaussian"]} -s $i -q 2> ../../../logs/${app}/${app}-s-$i.csv
         done
     fi
     
