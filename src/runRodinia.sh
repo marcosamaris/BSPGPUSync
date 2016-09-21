@@ -51,9 +51,9 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "hotspot3D" ]]; then        
-        for i in 8; do
+        for i in 2 4 8; do
             for j in 2 4 8 16 32 64 128 `seq 256 256 8192 `; do
-                nvprof  --metrics all --events all --print-gpu-trace --csv -u s ${execApps["hotspot3D"]} 512 8 $j ../../data/hotspot3D/power_512x$i ../../data/hotspot3D/temp_512x$i outbox stput.out 2> ../../../logs/${app}/${app}-$i-$j.csv
+                nvprof  --metrics all --events all --print-gpu-trace --csv -u s ${execApps["hotspot3D"]} 512 $i $j ../../data/hotspot3D/power_512x$i ../../data/hotspot3D/temp_512x$i outbox stput.out 2> ../../../logs/${app}/${app}-$i-$j.csv
             done
         done
     fi      
