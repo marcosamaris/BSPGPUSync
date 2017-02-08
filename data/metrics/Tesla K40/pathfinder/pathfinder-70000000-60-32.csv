@@ -1,4 +1,0 @@
-==1611== NVPROF is profiling process 1611, command: ./pathfinder 70000000 60 32 0
-==1611== Profiling application: ./pathfinder 70000000 60 32 0
-==1611== Profiling result:
-No events/metrics were profiled.

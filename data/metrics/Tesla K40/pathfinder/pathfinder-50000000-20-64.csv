@@ -1,4 +1,0 @@
-==496== NVPROF is profiling process 496, command: ./pathfinder 50000000 20 64 0
-==496== Profiling application: ./pathfinder 50000000 20 64 0
-==496== Profiling result:
-No events/metrics were profiled.

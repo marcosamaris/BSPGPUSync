@@ -1,4 +1,0 @@
-==1304== NVPROF is profiling process 1304, command: ./pathfinder 70000000 10 4 0
-==1304== Profiling application: ./pathfinder 70000000 10 4 0
-==1304== Profiling result:
-No events/metrics were profiled.

@@ -1,4 +1,0 @@
-==1083== NVPROF is profiling process 1083, command: ./pathfinder 60000000 60 4 0
-==1083== Profiling application: ./pathfinder 60000000 60 4 0
-==1083== Profiling result:
-No events/metrics were profiled.

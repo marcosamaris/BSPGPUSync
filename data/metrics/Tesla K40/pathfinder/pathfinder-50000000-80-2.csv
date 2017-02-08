@@ -1,4 +1,0 @@
-==720== NVPROF is profiling process 720, command: ./pathfinder 50000000 80 2 0
-==720== Profiling application: ./pathfinder 50000000 80 2 0
-==720== Profiling result:
-No events/metrics were profiled.

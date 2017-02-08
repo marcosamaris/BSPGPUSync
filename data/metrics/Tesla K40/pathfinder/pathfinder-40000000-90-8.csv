@@ -1,4 +1,0 @@
-==344== NVPROF is profiling process 344, command: ./pathfinder 40000000 90 8 0
-==344== Profiling application: ./pathfinder 40000000 90 8 0
-==344== Profiling result:
-No events/metrics were profiled.

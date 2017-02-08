@@ -1,4 +1,0 @@
-==1105== NVPROF is profiling process 1105, command: ./pathfinder 60000000 60 32 0
-==1105== Profiling application: ./pathfinder 60000000 60 32 0
-==1105== Profiling result:
-No events/metrics were profiled.

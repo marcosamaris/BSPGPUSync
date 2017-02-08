@@ -1,4 +1,0 @@
-==748== NVPROF is profiling process 748, command: ./pathfinder 50000000 80 32 0
-==748== Profiling application: ./pathfinder 50000000 80 32 0
-==748== Profiling result:
-No events/metrics were profiled.

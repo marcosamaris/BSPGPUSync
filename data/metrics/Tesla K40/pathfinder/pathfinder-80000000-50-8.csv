@@ -1,4 +1,0 @@
-==2020== NVPROF is profiling process 2020, command: ./pathfinder 80000000 50 8 0
-==2020== Profiling application: ./pathfinder 80000000 50 8 0
-==2020== Profiling result:
-No events/metrics were profiled.

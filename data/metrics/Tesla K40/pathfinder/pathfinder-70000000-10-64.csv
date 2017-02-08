@@ -1,4 +1,0 @@
-==1337== NVPROF is profiling process 1337, command: ./pathfinder 70000000 10 64 0
-==1337== Profiling application: ./pathfinder 70000000 10 64 0
-==1337== Profiling result:
-No events/metrics were profiled.

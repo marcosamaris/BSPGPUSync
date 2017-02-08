@@ -1,0 +1,55 @@
+
+common/
+    Shared files
+  include/
+      Shared include files
+  mk/
+      Shared makefiles
+  python/
+      Shared python code
+  src/
+      Source code of shared libraries
+
+driver/
+    Code of the driver program
+
+benchmarks/
+    Benchmark directories.
+    Each benchmark has its own directory.  Different benchmark versions may be
+    found in different subdirectories.
+  benchmarkname/
+    DESCRIPTION
+        Optional description of the benchmark
+    src/
+        Source code of the benchmark
+      base/
+          Readable, reference single-threaded CPU-only implementation
+      cpu/
+          Optimized single-threaded CPU-only implementation
+      cuda/
+          Optimized CUDA implementation
+      cuda_base/
+          Slower but more readable CUDA implementation
+
+    input/
+        Benchmark input files.  There is one subdirectory for each data set
+        that needs a description or input files.
+      datasetname/
+          Input files for the specified data set
+        DESCRIPTION
+            Optional description of the data set
+
+    output/
+        Benchmark output files.  There is one subdirectory for each data set.
+      datasetname/
+          Output files for the specified data set
+        DESCRIPTION
+            Optional description of the data set
+
+    tools/
+        Benchmark-specific utilities
+      compare-output
+          Tool to verify that the output of a benchmark is correct
+  
+parboil
+    The driver program for inspecting, compiling, and running benchmarks.

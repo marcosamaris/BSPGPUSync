@@ -1,4 +1,0 @@
-==365== NVPROF is profiling process 365, command: ./pathfinder 40000000 90 64 0
-==365== Profiling application: ./pathfinder 40000000 90 64 0
-==365== Profiling result:
-No events/metrics were profiled.

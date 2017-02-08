@@ -1,4 +1,0 @@
-==689== NVPROF is profiling process 689, command: ./pathfinder 50000000 70 8 0
-==689== Profiling application: ./pathfinder 50000000 70 8 0
-==689== Profiling result:
-No events/metrics were profiled.

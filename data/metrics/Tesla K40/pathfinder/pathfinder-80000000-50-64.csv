@@ -1,4 +1,0 @@
-==2042== NVPROF is profiling process 2042, command: ./pathfinder 80000000 50 64 0
-==2042== Profiling application: ./pathfinder 80000000 50 64 0
-==2042== Profiling result:
-No events/metrics were profiled.

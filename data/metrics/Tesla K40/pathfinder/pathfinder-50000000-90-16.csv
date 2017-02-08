@@ -1,4 +1,0 @@
-==786== NVPROF is profiling process 786, command: ./pathfinder 50000000 90 16 0
-==786== Profiling application: ./pathfinder 50000000 90 16 0
-==786== Profiling result:
-No events/metrics were profiled.

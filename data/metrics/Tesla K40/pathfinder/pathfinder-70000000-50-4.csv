@@ -1,4 +1,0 @@
-==1541== NVPROF is profiling process 1541, command: ./pathfinder 70000000 50 4 0
-==1541== Profiling application: ./pathfinder 70000000 50 4 0
-==1541== Profiling result:
-No events/metrics were profiled.

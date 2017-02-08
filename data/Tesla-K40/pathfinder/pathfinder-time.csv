@@ -1,0 +1,1200 @@
+100000,10,2,Command exited with non-zero status 13
+100000,10,2,0:00.10, 0.00,0.00
+100000,10,4,Command exited with non-zero status 13
+100000,10,4,0:00.10, 0.00,0.00
+100000,10,8,Command exited with non-zero status 13
+100000,10,8,0:00.10, 0.00,0.00
+100000,10,16,Command exited with non-zero status 13
+100000,10,16,0:00.10, 0.00,0.00
+100000,10,32,Command exited with non-zero status 13
+100000,10,32,0:00.10, 0.00,0.00
+100000,10,64,Command exited with non-zero status 13
+100000,10,64,0:00.10, 0.00,0.00
+100000,20,2,Command exited with non-zero status 13
+100000,20,2,0:00.10, 0.00,0.00
+100000,20,4,Command exited with non-zero status 13
+100000,20,4,0:00.10, 0.00,0.00
+100000,20,8,Command exited with non-zero status 13
+100000,20,8,0:00.10, 0.00,0.00
+100000,20,16,Command exited with non-zero status 13
+100000,20,16,0:00.10, 0.00,0.00
+100000,20,32,Command exited with non-zero status 13
+100000,20,32,0:00.10, 0.00,0.00
+100000,20,64,Command exited with non-zero status 13
+100000,20,64,0:00.10, 0.00,0.00
+100000,30,2,Command exited with non-zero status 13
+100000,30,2,0:00.10, 0.00,0.00
+100000,30,4,Command exited with non-zero status 13
+100000,30,4,0:00.10, 0.00,0.00
+100000,30,8,Command exited with non-zero status 13
+100000,30,8,0:00.10, 0.00,0.00
+100000,30,16,Command exited with non-zero status 13
+100000,30,16,0:00.10, 0.00,0.00
+100000,30,32,Command exited with non-zero status 13
+100000,30,32,0:00.10, 0.00,0.00
+100000,30,64,Command exited with non-zero status 13
+100000,30,64,0:00.10, 0.00,0.00
+100000,40,2,Command exited with non-zero status 13
+100000,40,2,0:00.10, 0.00,0.00
+100000,40,4,Command exited with non-zero status 13
+100000,40,4,0:00.10, 0.00,0.00
+100000,40,8,Command exited with non-zero status 13
+100000,40,8,0:00.10, 0.00,0.00
+100000,40,16,Command exited with non-zero status 13
+100000,40,16,0:00.10, 0.00,0.00
+100000,40,32,Command exited with non-zero status 13
+100000,40,32,0:00.10, 0.00,0.00
+100000,40,64,Command exited with non-zero status 13
+100000,40,64,0:00.10, 0.00,0.00
+100000,50,2,Command exited with non-zero status 13
+100000,50,2,0:00.10, 0.00,0.00
+100000,50,4,Command exited with non-zero status 13
+100000,50,4,0:00.10, 0.00,0.00
+100000,50,8,Command exited with non-zero status 13
+100000,50,8,0:00.10, 0.00,0.00
+100000,50,16,Command exited with non-zero status 13
+100000,50,16,0:00.10, 0.00,0.00
+100000,50,32,Command exited with non-zero status 13
+100000,50,32,0:00.10, 0.00,0.00
+100000,50,64,Command exited with non-zero status 13
+100000,50,64,0:00.10, 0.00,0.00
+100000,60,2,Command exited with non-zero status 13
+100000,60,2,0:00.10, 0.00,0.00
+100000,60,4,Command exited with non-zero status 13
+100000,60,4,0:00.10, 0.00,0.00
+100000,60,8,Command exited with non-zero status 13
+100000,60,8,0:00.10, 0.00,0.00
+100000,60,16,Command exited with non-zero status 13
+100000,60,16,0:00.10, 0.00,0.00
+100000,60,32,Command exited with non-zero status 13
+100000,60,32,0:00.10, 0.00,0.00
+100000,60,64,Command exited with non-zero status 13
+100000,60,64,0:00.10, 0.00,0.00
+100000,70,2,Command exited with non-zero status 13
+100000,70,2,0:00.10, 0.00,0.00
+100000,70,4,Command exited with non-zero status 13
+100000,70,4,0:00.10, 0.00,0.00
+100000,70,8,Command exited with non-zero status 13
+100000,70,8,0:00.10, 0.00,0.00
+100000,70,16,Command exited with non-zero status 13
+100000,70,16,0:00.10, 0.00,0.00
+100000,70,32,Command exited with non-zero status 13
+100000,70,32,0:00.10, 0.00,0.00
+100000,70,64,Command exited with non-zero status 13
+100000,70,64,0:00.10, 0.00,0.00
+100000,80,2,Command exited with non-zero status 13
+100000,80,2,0:00.10, 0.00,0.00
+100000,80,4,Command exited with non-zero status 13
+100000,80,4,0:00.10, 0.00,0.00
+100000,80,8,Command exited with non-zero status 13
+100000,80,8,0:00.10, 0.00,0.00
+100000,80,16,Command exited with non-zero status 13
+100000,80,16,0:00.10, 0.00,0.00
+100000,80,32,Command exited with non-zero status 13
+100000,80,32,0:00.10, 0.00,0.00
+100000,80,64,Command exited with non-zero status 13
+100000,80,64,0:00.10, 0.00,0.00
+100000,90,2,Command exited with non-zero status 13
+100000,90,2,0:00.10, 0.00,0.00
+100000,90,4,Command exited with non-zero status 13
+100000,90,4,0:00.10, 0.00,0.00
+100000,90,8,Command exited with non-zero status 13
+100000,90,8,0:00.10, 0.00,0.00
+100000,90,16,Command exited with non-zero status 13
+100000,90,16,0:00.10, 0.00,0.00
+100000,90,32,Command exited with non-zero status 13
+100000,90,32,0:00.10, 0.00,0.00
+100000,90,64,Command exited with non-zero status 13
+100000,90,64,0:00.10, 0.00,0.00
+100000,100,2,Command exited with non-zero status 13
+100000,100,2,0:00.10, 0.00,0.00
+100000,100,4,Command exited with non-zero status 13
+100000,100,4,0:00.10, 0.00,0.00
+100000,100,8,Command terminated by signal 2
+100000,100,8,0:00.03, 0.00,0.00
+100000,100,16,Command exited with non-zero status 13
+100000,100,16,0:00.10, 0.00,0.00
+100000,100,32,Command exited with non-zero status 13
+100000,100,32,0:00.10, 0.00,0.00
+100000,100,64,Command exited with non-zero status 13
+100000,100,64,0:00.10, 0.00,0.00
+200000,10,2,Command exited with non-zero status 13
+200000,10,2,0:00.10, 0.00,0.00
+200000,10,4,Command terminated by signal 2
+200000,10,4,0:00.05, 0.00,0.00
+200000,10,8,Command exited with non-zero status 13
+200000,10,8,0:00.10, 0.00,0.00
+200000,10,16,Command exited with non-zero status 13
+200000,10,16,0:00.10, 0.00,0.00
+200000,10,32,Command exited with non-zero status 13
+200000,10,32,0:00.10, 0.00,0.00
+200000,10,64,Command terminated by signal 2
+200000,10,64,0:00.09, 0.00,0.00
+200000,20,2,Command exited with non-zero status 13
+200000,20,2,0:00.10, 0.00,0.00
+200000,20,4,Command exited with non-zero status 13
+200000,20,4,0:00.10, 0.00,0.00
+200000,20,8,Command terminated by signal 2
+200000,20,8,0:00.06, 0.00,0.00
+200000,20,16,Command exited with non-zero status 13
+200000,20,16,0:00.10, 0.00,0.00
+200000,20,32,Command exited with non-zero status 13
+200000,20,32,0:00.10, 0.00,0.00
+200000,20,64,Command terminated by signal 2
+200000,20,64,0:00.03, 0.00,0.00
+200000,30,2,Command exited with non-zero status 13
+200000,30,2,0:00.10, 0.00,0.00
+200000,30,4,Command exited with non-zero status 13
+200000,30,4,0:00.10, 0.00,0.00
+200000,30,8,Command terminated by signal 2
+200000,30,8,0:00.05, 0.00,0.00
+200000,30,16,Command exited with non-zero status 13
+200000,30,16,0:00.10, 0.00,0.00
+200000,30,32,Command exited with non-zero status 13
+200000,30,32,0:00.10, 0.00,0.00
+200000,30,64,Command terminated by signal 2
+200000,30,64,0:00.04, 0.00,0.00
+200000,40,2,Command exited with non-zero status 13
+200000,40,2,0:00.10, 0.00,0.00
+200000,40,4,Command exited with non-zero status 13
+200000,40,4,0:00.10, 0.00,0.00
+200000,40,8,Command terminated by signal 2
+200000,40,8,0:00.02, 0.00,0.00
+200000,40,16,Command exited with non-zero status 13
+200000,40,16,0:00.10, 0.00,0.00
+200000,40,32,Command exited with non-zero status 13
+200000,40,32,0:00.10, 0.00,0.00
+200000,40,64,Command terminated by signal 2
+200000,40,64,0:00.03, 0.00,0.00
+200000,50,2,Command exited with non-zero status 13
+200000,50,2,0:00.10, 0.00,0.00
+200000,50,4,Command exited with non-zero status 13
+200000,50,4,0:00.10, 0.00,0.00
+200000,50,8,Command terminated by signal 2
+200000,50,8,0:00.01, 0.00,0.00
+200000,50,16,Command exited with non-zero status 13
+200000,50,16,0:00.10, 0.00,0.00
+200000,50,32,Command exited with non-zero status 13
+200000,50,32,0:00.10, 0.00,0.00
+200000,50,64,Command terminated by signal 2
+200000,50,64,0:00.00, 0.00,0.00
+200000,60,2,Command exited with non-zero status 13
+200000,60,2,0:00.10, 0.00,0.00
+200000,60,4,Command exited with non-zero status 13
+200000,60,4,0:00.10, 0.00,0.00
+200000,60,8,Command terminated by signal 2
+200000,60,8,0:00.00, 0.00,0.00
+200000,60,16,Command exited with non-zero status 13
+200000,60,16,0:00.10, 0.00,0.00
+200000,60,32,Command terminated by signal 2
+200000,60,32,0:00.09, 0.00,0.00
+200000,60,64,Command exited with non-zero status 13
+200000,60,64,0:00.10, 0.00,0.00
+200000,70,2,Command exited with non-zero status 13
+200000,70,2,0:00.10, 0.00,0.00
+200000,70,4,Command exited with non-zero status 13
+200000,70,4,0:00.10, 0.00,0.00
+200000,70,8,Command exited with non-zero status 13
+200000,70,8,0:00.10, 0.00,0.00
+200000,70,16,Command exited with non-zero status 13
+200000,70,16,0:00.10, 0.00,0.00
+200000,70,32,Command exited with non-zero status 13
+200000,70,32,0:00.10, 0.00,0.00
+200000,70,64,Command exited with non-zero status 13
+200000,70,64,0:00.10, 0.00,0.00
+200000,80,2,Command exited with non-zero status 13
+200000,80,2,0:00.10, 0.00,0.00
+200000,80,4,Command exited with non-zero status 13
+200000,80,4,0:00.10, 0.00,0.00
+200000,80,8,Command exited with non-zero status 13
+200000,80,8,0:00.10, 0.00,0.00
+200000,80,16,Command exited with non-zero status 13
+200000,80,16,0:00.10, 0.00,0.00
+200000,80,32,Command exited with non-zero status 13
+200000,80,32,0:00.10, 0.00,0.00
+200000,80,64,Command exited with non-zero status 13
+200000,80,64,0:00.10, 0.00,0.00
+200000,90,2,Command exited with non-zero status 13
+200000,90,2,0:00.10, 0.00,0.00
+200000,90,4,Command exited with non-zero status 13
+200000,90,4,0:00.10, 0.00,0.00
+200000,90,8,Command exited with non-zero status 13
+200000,90,8,0:00.10, 0.00,0.00
+200000,90,16,Command exited with non-zero status 13
+200000,90,16,0:00.10, 0.00,0.00
+200000,90,32,Command exited with non-zero status 13
+200000,90,32,0:00.10, 0.00,0.00
+200000,90,64,Command exited with non-zero status 13
+200000,90,64,0:00.10, 0.00,0.00
+200000,100,2,Command exited with non-zero status 13
+200000,100,2,0:00.10, 0.00,0.00
+200000,100,4,Command exited with non-zero status 13
+200000,100,4,0:00.10, 0.00,0.00
+200000,100,8,Command exited with non-zero status 13
+200000,100,8,0:00.10, 0.00,0.00
+200000,100,16,Command exited with non-zero status 13
+200000,100,16,0:00.10, 0.00,0.00
+200000,100,32,Command exited with non-zero status 13
+200000,100,32,0:00.10, 0.00,0.00
+200000,100,64,Command exited with non-zero status 13
+200000,100,64,0:00.10, 0.00,0.00
+300000,10,2,Command exited with non-zero status 13
+300000,10,2,0:00.10, 0.00,0.00
+300000,10,4,Command exited with non-zero status 13
+300000,10,4,0:00.10, 0.00,0.00
+300000,10,8,Command exited with non-zero status 13
+300000,10,8,0:00.10, 0.00,0.00
+300000,10,16,Command exited with non-zero status 13
+300000,10,16,0:00.10, 0.00,0.00
+300000,10,32,Command exited with non-zero status 13
+300000,10,32,0:00.10, 0.00,0.00
+300000,10,64,Command exited with non-zero status 13
+300000,10,64,0:00.15, 0.00,0.00
+300000,20,2,Command exited with non-zero status 13
+300000,20,2,0:00.10, 0.00,0.00
+300000,20,4,Command exited with non-zero status 13
+300000,20,4,0:00.10, 0.00,0.00
+300000,20,8,Command exited with non-zero status 13
+300000,20,8,0:00.11, 0.00,0.00
+300000,20,16,Command exited with non-zero status 13
+300000,20,16,0:00.10, 0.00,0.00
+300000,20,32,Command exited with non-zero status 13
+300000,20,32,0:00.10, 0.00,0.00
+300000,20,64,Command exited with non-zero status 13
+300000,20,64,0:00.10, 0.00,0.00
+300000,30,2,Command exited with non-zero status 13
+300000,30,2,0:00.10, 0.00,0.00
+300000,30,4,Command exited with non-zero status 13
+300000,30,4,0:00.10, 0.00,0.00
+300000,30,8,Command exited with non-zero status 13
+300000,30,8,0:00.10, 0.00,0.00
+300000,30,16,Command exited with non-zero status 13
+300000,30,16,0:00.10, 0.00,0.00
+300000,30,32,Command exited with non-zero status 13
+300000,30,32,0:00.10, 0.00,0.00
+300000,30,64,Command exited with non-zero status 13
+300000,30,64,0:00.10, 0.00,0.00
+300000,40,2,Command exited with non-zero status 13
+300000,40,2,0:00.11, 0.00,0.00
+300000,40,4,Command exited with non-zero status 13
+300000,40,4,0:00.10, 0.00,0.00
+300000,40,8,Command exited with non-zero status 13
+300000,40,8,0:00.10, 0.00,0.00
+300000,40,16,Command exited with non-zero status 13
+300000,40,16,0:00.10, 0.00,0.00
+300000,40,32,Command exited with non-zero status 13
+300000,40,32,0:00.10, 0.00,0.00
+300000,40,64,Command exited with non-zero status 13
+300000,40,64,0:00.10, 0.00,0.00
+300000,50,2,Command exited with non-zero status 13
+300000,50,2,0:00.10, 0.00,0.00
+300000,50,4,Command exited with non-zero status 13
+300000,50,4,0:00.10, 0.00,0.00
+300000,50,8,Command exited with non-zero status 13
+300000,50,8,0:00.10, 0.00,0.00
+300000,50,16,Command exited with non-zero status 13
+300000,50,16,0:00.10, 0.00,0.00
+300000,50,32,Command exited with non-zero status 13
+300000,50,32,0:00.10, 0.00,0.00
+300000,50,64,Command exited with non-zero status 13
+300000,50,64,0:00.10, 0.00,0.00
+300000,60,2,Command exited with non-zero status 13
+300000,60,2,0:00.10, 0.00,0.00
+300000,60,4,Command exited with non-zero status 13
+300000,60,4,0:00.10, 0.00,0.00
+300000,60,8,Command exited with non-zero status 13
+300000,60,8,0:00.10, 0.00,0.00
+300000,60,16,Command exited with non-zero status 13
+300000,60,16,0:00.10, 0.00,0.00
+300000,60,32,Command exited with non-zero status 13
+300000,60,32,0:00.10, 0.00,0.00
+300000,60,64,Command exited with non-zero status 13
+300000,60,64,0:00.10, 0.00,0.00
+300000,70,2,Command exited with non-zero status 13
+300000,70,2,0:00.10, 0.00,0.00
+300000,70,4,Command exited with non-zero status 13
+300000,70,4,0:00.10, 0.00,0.00
+300000,70,8,Command exited with non-zero status 13
+300000,70,8,0:00.10, 0.00,0.00
+300000,70,16,Command exited with non-zero status 13
+300000,70,16,0:00.10, 0.00,0.00
+300000,70,32,Command exited with non-zero status 13
+300000,70,32,0:00.10, 0.00,0.00
+300000,70,64,Command exited with non-zero status 13
+300000,70,64,0:00.10, 0.00,0.00
+300000,80,2,Command exited with non-zero status 13
+300000,80,2,0:00.10, 0.00,0.00
+300000,80,4,Command exited with non-zero status 13
+300000,80,4,0:00.10, 0.00,0.00
+300000,80,8,Command exited with non-zero status 13
+300000,80,8,0:00.10, 0.00,0.00
+300000,80,16,Command exited with non-zero status 13
+300000,80,16,0:00.10, 0.00,0.00
+300000,80,32,Command exited with non-zero status 13
+300000,80,32,0:00.10, 0.00,0.00
+300000,80,64,Command exited with non-zero status 13
+300000,80,64,0:00.10, 0.00,0.00
+300000,90,2,Command exited with non-zero status 13
+300000,90,2,0:00.10, 0.00,0.00
+300000,90,4,Command exited with non-zero status 13
+300000,90,4,0:00.10, 0.00,0.00
+300000,90,8,Command exited with non-zero status 13
+300000,90,8,0:00.10, 0.00,0.00
+300000,90,16,Command exited with non-zero status 13
+300000,90,16,0:00.10, 0.00,0.00
+300000,90,32,Command exited with non-zero status 13
+300000,90,32,0:00.10, 0.00,0.00
+300000,90,64,Command exited with non-zero status 13
+300000,90,64,0:00.10, 0.00,0.00
+300000,100,2,Command exited with non-zero status 13
+300000,100,2,0:00.10, 0.00,0.00
+300000,100,4,Command exited with non-zero status 13
+300000,100,4,0:00.10, 0.00,0.00
+300000,100,8,Command exited with non-zero status 13
+300000,100,8,0:00.10, 0.00,0.00
+300000,100,16,Command exited with non-zero status 13
+300000,100,16,0:00.10, 0.00,0.00
+300000,100,32,Command exited with non-zero status 13
+300000,100,32,0:00.10, 0.00,0.00
+300000,100,64,Command exited with non-zero status 13
+300000,100,64,0:00.10, 0.00,0.00
+400000,10,2,Command exited with non-zero status 13
+400000,10,2,0:00.10, 0.00,0.00
+400000,10,4,Command exited with non-zero status 13
+400000,10,4,0:00.10, 0.00,0.00
+400000,10,8,Command exited with non-zero status 13
+400000,10,8,0:00.10, 0.00,0.00
+400000,10,16,Command exited with non-zero status 13
+400000,10,16,0:00.10, 0.00,0.00
+400000,10,32,Command exited with non-zero status 13
+400000,10,32,0:00.10, 0.00,0.00
+400000,10,64,Command exited with non-zero status 13
+400000,10,64,0:00.10, 0.00,0.00
+400000,20,2,Command exited with non-zero status 13
+400000,20,2,0:00.10, 0.00,0.00
+400000,20,4,Command exited with non-zero status 13
+400000,20,4,0:00.10, 0.00,0.00
+400000,20,8,Command exited with non-zero status 13
+400000,20,8,0:00.10, 0.00,0.00
+400000,20,16,Command exited with non-zero status 13
+400000,20,16,0:00.10, 0.00,0.00
+400000,20,32,Command exited with non-zero status 13
+400000,20,32,0:00.10, 0.00,0.00
+400000,20,64,Command exited with non-zero status 13
+400000,20,64,0:00.10, 0.00,0.00
+400000,30,2,Command exited with non-zero status 13
+400000,30,2,0:00.10, 0.00,0.00
+400000,30,4,Command exited with non-zero status 13
+400000,30,4,0:00.10, 0.00,0.00
+400000,30,8,Command exited with non-zero status 13
+400000,30,8,0:00.10, 0.00,0.00
+400000,30,16,Command exited with non-zero status 13
+400000,30,16,0:00.10, 0.00,0.00
+400000,30,32,Command exited with non-zero status 13
+400000,30,32,0:00.10, 0.00,0.00
+400000,30,64,Command exited with non-zero status 13
+400000,30,64,0:00.10, 0.00,0.00
+400000,40,2,Command exited with non-zero status 13
+400000,40,2,0:00.10, 0.00,0.00
+400000,40,4,Command exited with non-zero status 13
+400000,40,4,0:00.10, 0.00,0.00
+400000,40,8,Command exited with non-zero status 13
+400000,40,8,0:00.10, 0.00,0.00
+400000,40,16,Command exited with non-zero status 13
+400000,40,16,0:00.10, 0.00,0.00
+400000,40,32,Command exited with non-zero status 13
+400000,40,32,0:00.10, 0.00,0.00
+400000,40,64,Command exited with non-zero status 13
+400000,40,64,0:00.10, 0.00,0.00
+400000,50,2,Command exited with non-zero status 13
+400000,50,2,0:00.10, 0.00,0.00
+400000,50,4,Command exited with non-zero status 13
+400000,50,4,0:00.10, 0.00,0.00
+400000,50,8,Command exited with non-zero status 13
+400000,50,8,0:00.10, 0.00,0.00
+400000,50,16,Command exited with non-zero status 13
+400000,50,16,0:00.10, 0.00,0.00
+400000,50,32,Command exited with non-zero status 13
+400000,50,32,0:00.10, 0.00,0.00
+400000,50,64,Command exited with non-zero status 13
+400000,50,64,0:00.10, 0.00,0.00
+400000,60,2,Command exited with non-zero status 13
+400000,60,2,0:00.10, 0.00,0.00
+400000,60,4,Command exited with non-zero status 13
+400000,60,4,0:00.10, 0.00,0.00
+400000,60,8,Command exited with non-zero status 13
+400000,60,8,0:00.10, 0.00,0.00
+400000,60,16,Command exited with non-zero status 13
+400000,60,16,0:00.10, 0.00,0.00
+400000,60,32,Command exited with non-zero status 13
+400000,60,32,0:00.10, 0.00,0.00
+400000,60,64,Command exited with non-zero status 13
+400000,60,64,0:00.10, 0.00,0.00
+400000,70,2,Command exited with non-zero status 13
+400000,70,2,0:00.10, 0.00,0.00
+400000,70,4,Command exited with non-zero status 13
+400000,70,4,0:00.10, 0.00,0.00
+400000,70,8,Command exited with non-zero status 13
+400000,70,8,0:00.10, 0.00,0.00
+400000,70,16,Command exited with non-zero status 13
+400000,70,16,0:00.10, 0.00,0.00
+400000,70,32,Command exited with non-zero status 13
+400000,70,32,0:00.10, 0.00,0.00
+400000,70,64,Command exited with non-zero status 13
+400000,70,64,0:00.10, 0.00,0.00
+400000,80,2,Command exited with non-zero status 13
+400000,80,2,0:00.10, 0.00,0.00
+400000,80,4,Command exited with non-zero status 13
+400000,80,4,0:00.10, 0.00,0.00
+400000,80,8,Command exited with non-zero status 13
+400000,80,8,0:00.10, 0.00,0.00
+400000,80,16,Command exited with non-zero status 13
+400000,80,16,0:00.10, 0.00,0.00
+400000,80,32,Command exited with non-zero status 13
+400000,80,32,0:00.10, 0.00,0.00
+400000,80,64,Command exited with non-zero status 13
+400000,80,64,0:00.10, 0.00,0.00
+400000,90,2,Command exited with non-zero status 13
+400000,90,2,0:00.10, 0.00,0.00
+400000,90,4,Command exited with non-zero status 13
+400000,90,4,0:00.10, 0.00,0.00
+400000,90,8,Command exited with non-zero status 13
+400000,90,8,0:00.10, 0.00,0.00
+400000,90,16,Command exited with non-zero status 13
+400000,90,16,0:00.10, 0.00,0.00
+400000,90,32,Command exited with non-zero status 13
+400000,90,32,0:00.10, 0.00,0.00
+400000,90,64,Command exited with non-zero status 13
+400000,90,64,0:00.10, 0.00,0.00
+400000,100,2,Command exited with non-zero status 13
+400000,100,2,0:00.10, 0.00,0.00
+400000,100,4,Command exited with non-zero status 13
+400000,100,4,0:00.10, 0.00,0.00
+400000,100,8,Command exited with non-zero status 13
+400000,100,8,0:00.10, 0.00,0.00
+400000,100,16,Command exited with non-zero status 13
+400000,100,16,0:00.10, 0.00,0.00
+400000,100,32,Command exited with non-zero status 13
+400000,100,32,0:00.10, 0.00,0.00
+400000,100,64,Command exited with non-zero status 13
+400000,100,64,0:00.10, 0.00,0.00
+500000,10,2,Command exited with non-zero status 13
+500000,10,2,0:00.10, 0.00,0.00
+500000,10,4,Command exited with non-zero status 13
+500000,10,4,0:00.10, 0.00,0.00
+500000,10,8,Command exited with non-zero status 13
+500000,10,8,0:00.10, 0.00,0.00
+500000,10,16,Command exited with non-zero status 13
+500000,10,16,0:00.10, 0.00,0.00
+500000,10,32,Command exited with non-zero status 13
+500000,10,32,0:00.10, 0.00,0.00
+500000,10,64,Command exited with non-zero status 13
+500000,10,64,0:00.10, 0.00,0.00
+500000,20,2,Command exited with non-zero status 13
+500000,20,2,0:00.10, 0.00,0.00
+500000,20,4,Command exited with non-zero status 13
+500000,20,4,0:00.10, 0.00,0.00
+500000,20,8,Command exited with non-zero status 13
+500000,20,8,0:00.10, 0.00,0.00
+500000,20,16,Command exited with non-zero status 13
+500000,20,16,0:00.10, 0.00,0.00
+500000,20,32,Command exited with non-zero status 13
+500000,20,32,0:00.10, 0.00,0.00
+500000,20,64,Command exited with non-zero status 13
+500000,20,64,0:00.10, 0.00,0.00
+500000,30,2,Command exited with non-zero status 13
+500000,30,2,0:00.10, 0.00,0.00
+500000,30,4,Command exited with non-zero status 13
+500000,30,4,0:00.10, 0.00,0.00
+500000,30,8,Command exited with non-zero status 13
+500000,30,8,0:00.10, 0.00,0.00
+500000,30,16,Command exited with non-zero status 13
+500000,30,16,0:00.10, 0.00,0.00
+500000,30,32,Command exited with non-zero status 13
+500000,30,32,0:00.10, 0.00,0.00
+500000,30,64,Command exited with non-zero status 13
+500000,30,64,0:00.10, 0.00,0.00
+500000,40,2,Command exited with non-zero status 13
+500000,40,2,0:00.10, 0.00,0.00
+500000,40,4,Command exited with non-zero status 13
+500000,40,4,0:00.10, 0.00,0.00
+500000,40,8,Command exited with non-zero status 13
+500000,40,8,0:00.10, 0.00,0.00
+500000,40,16,Command exited with non-zero status 13
+500000,40,16,0:00.10, 0.00,0.00
+500000,40,32,Command exited with non-zero status 13
+500000,40,32,0:00.14, 0.00,0.00
+500000,40,64,Command exited with non-zero status 13
+500000,40,64,0:00.10, 0.00,0.00
+500000,50,2,Command exited with non-zero status 13
+500000,50,2,0:00.10, 0.00,0.00
+500000,50,4,Command exited with non-zero status 13
+500000,50,4,0:00.10, 0.00,0.00
+500000,50,8,Command exited with non-zero status 13
+500000,50,8,0:00.10, 0.00,0.00
+500000,50,16,Command exited with non-zero status 13
+500000,50,16,0:00.10, 0.00,0.00
+500000,50,32,Command exited with non-zero status 13
+500000,50,32,0:00.00, 0.00,0.00
+500000,50,64,Command exited with non-zero status 13
+500000,50,64,0:00.10, 0.00,0.00
+500000,60,2,Command exited with non-zero status 13
+500000,60,2,0:00.10, 0.00,0.00
+500000,60,4,Command exited with non-zero status 13
+500000,60,4,0:00.10, 0.00,0.00
+500000,60,8,Command exited with non-zero status 13
+500000,60,8,0:00.10, 0.00,0.00
+500000,60,16,Command exited with non-zero status 13
+500000,60,16,0:00.10, 0.00,0.00
+500000,60,32,Command exited with non-zero status 13
+500000,60,32,0:00.10, 0.00,0.00
+500000,60,64,Command exited with non-zero status 13
+500000,60,64,0:00.10, 0.00,0.00
+500000,70,2,Command exited with non-zero status 13
+500000,70,2,0:00.10, 0.00,0.00
+500000,70,4,Command exited with non-zero status 13
+500000,70,4,0:00.10, 0.00,0.00
+500000,70,8,Command exited with non-zero status 13
+500000,70,8,0:00.10, 0.00,0.00
+500000,70,16,Command exited with non-zero status 13
+500000,70,16,0:00.10, 0.00,0.00
+500000,70,32,Command exited with non-zero status 13
+500000,70,32,0:00.10, 0.00,0.00
+500000,70,64,Command exited with non-zero status 13
+500000,70,64,0:00.10, 0.00,0.00
+500000,80,2,Command exited with non-zero status 13
+500000,80,2,0:00.10, 0.00,0.00
+500000,80,4,Command exited with non-zero status 13
+500000,80,4,0:00.10, 0.00,0.00
+500000,80,8,Command exited with non-zero status 13
+500000,80,8,0:00.10, 0.00,0.00
+500000,80,16,Command exited with non-zero status 13
+500000,80,16,0:00.10, 0.00,0.00
+500000,80,32,Command exited with non-zero status 13
+500000,80,32,0:00.10, 0.00,0.00
+500000,80,64,Command exited with non-zero status 13
+500000,80,64,0:00.10, 0.00,0.00
+500000,90,2,Command exited with non-zero status 13
+500000,90,2,0:00.10, 0.00,0.00
+500000,90,4,Command exited with non-zero status 13
+500000,90,4,0:00.10, 0.00,0.00
+500000,90,8,Command exited with non-zero status 13
+500000,90,8,0:00.10, 0.00,0.00
+500000,90,16,Command exited with non-zero status 13
+500000,90,16,0:00.10, 0.00,0.00
+500000,90,32,Command exited with non-zero status 13
+500000,90,32,0:00.10, 0.00,0.00
+500000,90,64,Command exited with non-zero status 13
+500000,90,64,0:00.10, 0.00,0.00
+500000,100,2,Command exited with non-zero status 13
+500000,100,2,0:00.10, 0.00,0.00
+500000,100,4,Command exited with non-zero status 13
+500000,100,4,0:00.10, 0.00,0.00
+500000,100,8,Command exited with non-zero status 13
+500000,100,8,0:00.10, 0.00,0.00
+500000,100,16,Command exited with non-zero status 13
+500000,100,16,0:00.10, 0.00,0.00
+500000,100,32,Command exited with non-zero status 13
+500000,100,32,0:00.10, 0.00,0.00
+500000,100,64,Command exited with non-zero status 13
+500000,100,64,0:00.10, 0.00,0.00
+600000,10,2,Command exited with non-zero status 13
+600000,10,2,0:00.10, 0.00,0.00
+600000,10,4,Command exited with non-zero status 13
+600000,10,4,0:00.10, 0.00,0.00
+600000,10,8,Command exited with non-zero status 13
+600000,10,8,0:00.10, 0.00,0.00
+600000,10,16,Command exited with non-zero status 13
+600000,10,16,0:00.10, 0.00,0.00
+600000,10,32,Command exited with non-zero status 13
+600000,10,32,0:00.10, 0.00,0.00
+600000,10,64,Command exited with non-zero status 13
+600000,10,64,0:00.10, 0.00,0.00
+600000,20,2,Command exited with non-zero status 13
+600000,20,2,0:00.10, 0.00,0.00
+600000,20,4,Command exited with non-zero status 13
+600000,20,4,0:00.10, 0.00,0.00
+600000,20,8,Command exited with non-zero status 13
+600000,20,8,0:00.10, 0.00,0.00
+600000,20,16,Command exited with non-zero status 13
+600000,20,16,0:00.10, 0.00,0.00
+600000,20,32,Command exited with non-zero status 13
+600000,20,32,0:00.10, 0.00,0.00
+600000,20,64,Command exited with non-zero status 13
+600000,20,64,0:00.10, 0.00,0.00
+600000,30,2,Command exited with non-zero status 13
+600000,30,2,0:00.10, 0.00,0.00
+600000,30,4,Command exited with non-zero status 13
+600000,30,4,0:00.10, 0.00,0.00
+600000,30,8,Command exited with non-zero status 13
+600000,30,8,0:00.10, 0.00,0.00
+600000,30,16,Command exited with non-zero status 13
+600000,30,16,0:00.10, 0.00,0.00
+600000,30,32,Command exited with non-zero status 13
+600000,30,32,0:00.10, 0.00,0.00
+600000,30,64,Command exited with non-zero status 13
+600000,30,64,0:00.10, 0.00,0.00
+600000,40,2,Command exited with non-zero status 13
+600000,40,2,0:00.10, 0.00,0.00
+600000,40,4,Command exited with non-zero status 13
+600000,40,4,0:00.10, 0.00,0.00
+600000,40,8,Command exited with non-zero status 13
+600000,40,8,0:00.10, 0.00,0.00
+600000,40,16,Command exited with non-zero status 13
+600000,40,16,0:00.10, 0.00,0.00
+600000,40,32,Command exited with non-zero status 13
+600000,40,32,0:00.10, 0.00,0.00
+600000,40,64,Command exited with non-zero status 13
+600000,40,64,0:00.10, 0.00,0.00
+600000,50,2,Command exited with non-zero status 13
+600000,50,2,0:00.10, 0.00,0.00
+600000,50,4,Command exited with non-zero status 13
+600000,50,4,0:00.10, 0.00,0.00
+600000,50,8,Command exited with non-zero status 13
+600000,50,8,0:00.10, 0.00,0.00
+600000,50,16,Command exited with non-zero status 13
+600000,50,16,0:00.10, 0.00,0.00
+600000,50,32,Command exited with non-zero status 13
+600000,50,32,0:00.10, 0.00,0.00
+600000,50,64,Command exited with non-zero status 13
+600000,50,64,0:00.01, 0.00,0.00
+600000,60,2,Command exited with non-zero status 13
+600000,60,2,0:00.10, 0.00,0.00
+600000,60,4,Command exited with non-zero status 13
+600000,60,4,0:00.10, 0.00,0.00
+600000,60,8,Command exited with non-zero status 13
+600000,60,8,0:00.10, 0.00,0.00
+600000,60,16,Command exited with non-zero status 13
+600000,60,16,0:00.10, 0.00,0.00
+600000,60,32,Command exited with non-zero status 13
+600000,60,32,0:00.10, 0.00,0.00
+600000,60,64,Command exited with non-zero status 13
+600000,60,64,0:00.10, 0.00,0.00
+600000,70,2,Command exited with non-zero status 13
+600000,70,2,0:00.10, 0.00,0.00
+600000,70,4,Command exited with non-zero status 13
+600000,70,4,0:00.10, 0.00,0.00
+600000,70,8,Command exited with non-zero status 13
+600000,70,8,0:00.10, 0.00,0.00
+600000,70,16,Command exited with non-zero status 13
+600000,70,16,0:00.10, 0.00,0.00
+600000,70,32,Command exited with non-zero status 13
+600000,70,32,0:00.10, 0.00,0.00
+600000,70,64,Command exited with non-zero status 13
+600000,70,64,0:00.10, 0.00,0.00
+600000,80,2,Command exited with non-zero status 13
+600000,80,2,0:00.10, 0.00,0.00
+600000,80,4,Command exited with non-zero status 13
+600000,80,4,0:00.10, 0.00,0.00
+600000,80,8,Command exited with non-zero status 13
+600000,80,8,0:00.10, 0.00,0.00
+600000,80,16,Command exited with non-zero status 13
+600000,80,16,0:00.10, 0.00,0.00
+600000,80,32,Command exited with non-zero status 13
+600000,80,32,0:00.10, 0.00,0.00
+600000,80,64,Command exited with non-zero status 13
+600000,80,64,0:00.10, 0.00,0.00
+600000,90,2,Command exited with non-zero status 13
+600000,90,2,0:00.10, 0.00,0.00
+600000,90,4,Command exited with non-zero status 13
+600000,90,4,0:00.10, 0.00,0.00
+600000,90,8,Command exited with non-zero status 13
+600000,90,8,0:00.10, 0.00,0.00
+600000,90,16,Command exited with non-zero status 13
+600000,90,16,0:00.10, 0.00,0.00
+600000,90,32,Command exited with non-zero status 13
+600000,90,32,0:00.10, 0.00,0.00
+600000,90,64,Command exited with non-zero status 13
+600000,90,64,0:00.10, 0.00,0.00
+600000,100,2,Command exited with non-zero status 13
+600000,100,2,0:00.10, 0.00,0.00
+600000,100,4,Command exited with non-zero status 13
+600000,100,4,0:00.14, 0.00,0.00
+600000,100,8,Command exited with non-zero status 13
+600000,100,8,0:00.10, 0.00,0.00
+600000,100,16,Command exited with non-zero status 13
+600000,100,16,0:00.10, 0.00,0.00
+600000,100,32,Command exited with non-zero status 13
+600000,100,32,0:00.10, 0.00,0.00
+600000,100,64,Command exited with non-zero status 13
+600000,100,64,0:00.10, 0.00,0.00
+700000,10,2,Command exited with non-zero status 13
+700000,10,2,0:00.10, 0.00,0.00
+700000,10,4,Command exited with non-zero status 13
+700000,10,4,0:00.10, 0.00,0.00
+700000,10,8,Command exited with non-zero status 13
+700000,10,8,0:00.10, 0.00,0.00
+700000,10,16,Command exited with non-zero status 13
+700000,10,16,0:00.10, 0.00,0.00
+700000,10,32,Command exited with non-zero status 13
+700000,10,32,0:00.10, 0.00,0.00
+700000,10,64,Command exited with non-zero status 13
+700000,10,64,0:00.10, 0.00,0.00
+700000,20,2,Command exited with non-zero status 13
+700000,20,2,0:00.10, 0.00,0.00
+700000,20,4,Command exited with non-zero status 13
+700000,20,4,0:00.10, 0.00,0.00
+700000,20,8,Command exited with non-zero status 13
+700000,20,8,0:00.10, 0.00,0.00
+700000,20,16,Command exited with non-zero status 13
+700000,20,16,0:00.10, 0.00,0.00
+700000,20,32,Command exited with non-zero status 13
+700000,20,32,0:00.10, 0.00,0.00
+700000,20,64,Command exited with non-zero status 13
+700000,20,64,0:00.10, 0.00,0.00
+700000,30,2,Command exited with non-zero status 13
+700000,30,2,0:00.10, 0.00,0.00
+700000,30,4,Command exited with non-zero status 13
+700000,30,4,0:00.10, 0.00,0.00
+700000,30,8,Command exited with non-zero status 13
+700000,30,8,0:00.10, 0.00,0.00
+700000,30,16,Command exited with non-zero status 13
+700000,30,16,0:00.10, 0.00,0.00
+700000,30,32,Command exited with non-zero status 13
+700000,30,32,0:00.10, 0.00,0.00
+700000,30,64,Command exited with non-zero status 13
+700000,30,64,0:00.10, 0.00,0.00
+700000,40,2,Command exited with non-zero status 13
+700000,40,2,0:00.10, 0.00,0.00
+700000,40,4,Command exited with non-zero status 13
+700000,40,4,0:00.10, 0.00,0.00
+700000,40,8,Command exited with non-zero status 13
+700000,40,8,0:00.10, 0.00,0.00
+700000,40,16,Command exited with non-zero status 13
+700000,40,16,0:00.10, 0.00,0.00
+700000,40,32,Command exited with non-zero status 13
+700000,40,32,0:00.10, 0.00,0.00
+700000,40,64,Command exited with non-zero status 13
+700000,40,64,0:00.10, 0.00,0.00
+700000,50,2,Command exited with non-zero status 13
+700000,50,2,0:00.10, 0.00,0.00
+700000,50,4,Command exited with non-zero status 13
+700000,50,4,0:00.10, 0.00,0.00
+700000,50,8,Command exited with non-zero status 13
+700000,50,8,0:00.10, 0.00,0.00
+700000,50,16,Command exited with non-zero status 13
+700000,50,16,0:00.10, 0.00,0.00
+700000,50,32,Command exited with non-zero status 13
+700000,50,32,0:00.10, 0.00,0.00
+700000,50,64,Command exited with non-zero status 13
+700000,50,64,0:00.10, 0.00,0.00
+700000,60,2,Command exited with non-zero status 13
+700000,60,2,0:00.10, 0.00,0.00
+700000,60,4,Command exited with non-zero status 13
+700000,60,4,0:00.10, 0.00,0.00
+700000,60,8,Command exited with non-zero status 13
+700000,60,8,0:00.10, 0.00,0.00
+700000,60,16,Command exited with non-zero status 13
+700000,60,16,0:00.10, 0.00,0.00
+700000,60,32,Command exited with non-zero status 13
+700000,60,32,0:00.10, 0.00,0.00
+700000,60,64,Command exited with non-zero status 13
+700000,60,64,0:00.10, 0.00,0.00
+700000,70,2,Command exited with non-zero status 13
+700000,70,2,0:00.10, 0.00,0.00
+700000,70,4,Command exited with non-zero status 13
+700000,70,4,0:00.10, 0.00,0.00
+700000,70,8,Command exited with non-zero status 13
+700000,70,8,0:00.10, 0.00,0.00
+700000,70,16,Command exited with non-zero status 13
+700000,70,16,0:00.10, 0.00,0.00
+700000,70,32,Command exited with non-zero status 13
+700000,70,32,0:00.10, 0.00,0.00
+700000,70,64,Command exited with non-zero status 13
+700000,70,64,0:00.10, 0.00,0.00
+700000,80,2,Command exited with non-zero status 13
+700000,80,2,0:00.10, 0.00,0.00
+700000,80,4,Command exited with non-zero status 13
+700000,80,4,0:00.10, 0.00,0.00
+700000,80,8,Command exited with non-zero status 13
+700000,80,8,0:00.10, 0.00,0.00
+700000,80,16,Command exited with non-zero status 13
+700000,80,16,0:00.10, 0.00,0.00
+700000,80,32,Command exited with non-zero status 13
+700000,80,32,0:00.10, 0.00,0.00
+700000,80,64,Command exited with non-zero status 13
+700000,80,64,0:00.10, 0.00,0.00
+700000,90,2,Command exited with non-zero status 13
+700000,90,2,0:00.10, 0.00,0.00
+700000,90,4,Command exited with non-zero status 13
+700000,90,4,0:00.10, 0.00,0.00
+700000,90,8,Command exited with non-zero status 13
+700000,90,8,0:00.10, 0.00,0.00
+700000,90,16,Command exited with non-zero status 13
+700000,90,16,0:00.10, 0.00,0.00
+700000,90,32,Command exited with non-zero status 13
+700000,90,32,0:00.10, 0.00,0.00
+700000,90,64,Command exited with non-zero status 13
+700000,90,64,0:00.10, 0.00,0.00
+700000,100,2,Command exited with non-zero status 13
+700000,100,2,0:00.10, 0.00,0.00
+700000,100,4,Command exited with non-zero status 13
+700000,100,4,0:00.10, 0.00,0.00
+700000,100,8,Command exited with non-zero status 13
+700000,100,8,0:00.10, 0.00,0.00
+700000,100,16,Command exited with non-zero status 13
+700000,100,16,0:00.10, 0.00,0.00
+700000,100,32,Command exited with non-zero status 13
+700000,100,32,0:00.10, 0.00,0.00
+700000,100,64,Command exited with non-zero status 13
+700000,100,64,0:00.10, 0.00,0.00
+800000,10,2,Command exited with non-zero status 13
+800000,10,2,0:00.10, 0.00,0.00
+800000,10,4,Command exited with non-zero status 13
+800000,10,4,0:00.10, 0.00,0.00
+800000,10,8,Command exited with non-zero status 13
+800000,10,8,0:00.10, 0.00,0.00
+800000,10,16,Command exited with non-zero status 13
+800000,10,16,0:00.10, 0.00,0.00
+800000,10,32,Command exited with non-zero status 13
+800000,10,32,0:00.10, 0.00,0.00
+800000,10,64,Command exited with non-zero status 13
+800000,10,64,0:00.10, 0.00,0.00
+800000,20,2,Command exited with non-zero status 13
+800000,20,2,0:00.10, 0.00,0.00
+800000,20,4,Command exited with non-zero status 13
+800000,20,4,0:00.10, 0.00,0.00
+800000,20,8,Command exited with non-zero status 13
+800000,20,8,0:00.10, 0.00,0.00
+800000,20,16,Command exited with non-zero status 13
+800000,20,16,0:00.10, 0.00,0.00
+800000,20,32,Command exited with non-zero status 13
+800000,20,32,0:00.10, 0.00,0.00
+800000,20,64,Command exited with non-zero status 13
+800000,20,64,0:00.10, 0.00,0.00
+800000,30,2,Command exited with non-zero status 13
+800000,30,2,0:00.10, 0.00,0.00
+800000,30,4,Command exited with non-zero status 13
+800000,30,4,0:00.10, 0.00,0.00
+800000,30,8,Command exited with non-zero status 13
+800000,30,8,0:00.10, 0.00,0.00
+800000,30,16,Command exited with non-zero status 13
+800000,30,16,0:00.10, 0.00,0.00
+800000,30,32,Command exited with non-zero status 13
+800000,30,32,0:00.10, 0.00,0.00
+800000,30,64,Command exited with non-zero status 13
+800000,30,64,0:00.10, 0.00,0.00
+800000,40,2,Command exited with non-zero status 13
+800000,40,2,0:00.10, 0.00,0.00
+800000,40,4,Command exited with non-zero status 13
+800000,40,4,0:00.10, 0.00,0.00
+800000,40,8,Command exited with non-zero status 13
+800000,40,8,0:00.10, 0.00,0.00
+800000,40,16,Command exited with non-zero status 13
+800000,40,16,0:00.10, 0.00,0.00
+800000,40,32,Command exited with non-zero status 13
+800000,40,32,0:00.10, 0.00,0.00
+800000,40,64,Command exited with non-zero status 13
+800000,40,64,0:00.10, 0.00,0.00
+800000,50,2,Command exited with non-zero status 13
+800000,50,2,0:00.10, 0.00,0.00
+800000,50,4,Command exited with non-zero status 13
+800000,50,4,0:00.10, 0.00,0.00
+800000,50,8,Command exited with non-zero status 13
+800000,50,8,0:00.10, 0.00,0.00
+800000,50,16,Command exited with non-zero status 13
+800000,50,16,0:00.10, 0.00,0.00
+800000,50,32,Command exited with non-zero status 13
+800000,50,32,0:00.12, 0.00,0.00
+800000,50,64,Command exited with non-zero status 13
+800000,50,64,0:00.10, 0.00,0.00
+800000,60,2,Command exited with non-zero status 13
+800000,60,2,0:00.10, 0.00,0.00
+800000,60,4,Command exited with non-zero status 13
+800000,60,4,0:00.10, 0.00,0.00
+800000,60,8,Command exited with non-zero status 13
+800000,60,8,0:00.10, 0.00,0.00
+800000,60,16,Command exited with non-zero status 13
+800000,60,16,0:00.10, 0.00,0.00
+800000,60,32,Command exited with non-zero status 13
+800000,60,32,0:00.10, 0.00,0.00
+800000,60,64,Command exited with non-zero status 13
+800000,60,64,0:00.10, 0.00,0.00
+800000,70,2,Command exited with non-zero status 13
+800000,70,2,0:00.10, 0.00,0.00
+800000,70,4,Command exited with non-zero status 13
+800000,70,4,0:00.10, 0.00,0.00
+800000,70,8,Command exited with non-zero status 13
+800000,70,8,0:00.10, 0.00,0.00
+800000,70,16,Command exited with non-zero status 13
+800000,70,16,0:00.10, 0.00,0.00
+800000,70,32,Command exited with non-zero status 13
+800000,70,32,0:00.10, 0.00,0.00
+800000,70,64,Command exited with non-zero status 13
+800000,70,64,0:00.10, 0.00,0.00
+800000,80,2,Command exited with non-zero status 13
+800000,80,2,0:00.10, 0.00,0.00
+800000,80,4,Command exited with non-zero status 13
+800000,80,4,0:00.10, 0.00,0.00
+800000,80,8,Command exited with non-zero status 13
+800000,80,8,0:00.10, 0.00,0.00
+800000,80,16,Command exited with non-zero status 13
+800000,80,16,0:00.10, 0.00,0.00
+800000,80,32,Command exited with non-zero status 13
+800000,80,32,0:00.10, 0.00,0.00
+800000,80,64,Command exited with non-zero status 13
+800000,80,64,0:00.10, 0.00,0.00
+800000,90,2,Command exited with non-zero status 13
+800000,90,2,0:00.10, 0.00,0.00
+800000,90,4,Command exited with non-zero status 13
+800000,90,4,0:00.10, 0.00,0.00
+800000,90,8,Command exited with non-zero status 13
+800000,90,8,0:00.10, 0.00,0.00
+800000,90,16,Command exited with non-zero status 13
+800000,90,16,0:00.10, 0.00,0.00
+800000,90,32,Command exited with non-zero status 13
+800000,90,32,0:00.10, 0.00,0.00
+800000,90,64,Command exited with non-zero status 13
+800000,90,64,0:00.10, 0.00,0.00
+800000,100,2,Command exited with non-zero status 13
+800000,100,2,0:00.10, 0.00,0.00
+800000,100,4,Command exited with non-zero status 13
+800000,100,4,0:00.10, 0.00,0.00
+800000,100,8,Command exited with non-zero status 13
+800000,100,8,0:00.10, 0.00,0.00
+800000,100,16,Command exited with non-zero status 13
+800000,100,16,0:00.10, 0.00,0.00
+800000,100,32,Command exited with non-zero status 13
+800000,100,32,0:00.10, 0.00,0.00
+800000,100,64,Command exited with non-zero status 13
+800000,100,64,0:00.10, 0.00,0.00
+900000,10,2,Command exited with non-zero status 13
+900000,10,2,0:00.10, 0.00,0.00
+900000,10,4,Command exited with non-zero status 13
+900000,10,4,0:00.10, 0.00,0.00
+900000,10,8,Command exited with non-zero status 13
+900000,10,8,0:00.10, 0.00,0.00
+900000,10,16,Command exited with non-zero status 13
+900000,10,16,0:00.10, 0.00,0.00
+900000,10,32,Command exited with non-zero status 13
+900000,10,32,0:00.10, 0.00,0.00
+900000,10,64,Command exited with non-zero status 13
+900000,10,64,0:00.10, 0.00,0.00
+900000,20,2,Command exited with non-zero status 13
+900000,20,2,0:00.10, 0.00,0.00
+900000,20,4,Command exited with non-zero status 13
+900000,20,4,0:00.10, 0.00,0.00
+900000,20,8,Command exited with non-zero status 13
+900000,20,8,0:00.10, 0.00,0.00
+900000,20,16,Command exited with non-zero status 13
+900000,20,16,0:00.10, 0.00,0.00
+900000,20,32,Command exited with non-zero status 13
+900000,20,32,0:00.10, 0.00,0.00
+900000,20,64,Command exited with non-zero status 13
+900000,20,64,0:00.10, 0.00,0.00
+900000,30,2,Command exited with non-zero status 13
+900000,30,2,0:00.10, 0.00,0.00
+900000,30,4,Command exited with non-zero status 13
+900000,30,4,0:00.10, 0.00,0.00
+900000,30,8,Command exited with non-zero status 13
+900000,30,8,0:00.16, 0.00,0.00
+900000,30,16,Command exited with non-zero status 13
+900000,30,16,0:00.10, 0.00,0.00
+900000,30,32,Command exited with non-zero status 13
+900000,30,32,0:00.10, 0.00,0.00
+900000,30,64,Command exited with non-zero status 13
+900000,30,64,0:00.10, 0.00,0.00
+900000,40,2,Command exited with non-zero status 13
+900000,40,2,0:00.10, 0.00,0.00
+900000,40,4,Command exited with non-zero status 13
+900000,40,4,0:00.10, 0.00,0.00
+900000,40,8,Command exited with non-zero status 13
+900000,40,8,0:00.10, 0.00,0.00
+900000,40,16,Command exited with non-zero status 13
+900000,40,16,0:00.10, 0.00,0.00
+900000,40,32,Command exited with non-zero status 13
+900000,40,32,0:00.10, 0.00,0.00
+900000,40,64,Command exited with non-zero status 13
+900000,40,64,0:00.10, 0.00,0.00
+900000,50,2,Command exited with non-zero status 13
+900000,50,2,0:00.10, 0.00,0.00
+900000,50,4,Command exited with non-zero status 13
+900000,50,4,0:00.10, 0.00,0.00
+900000,50,8,Command exited with non-zero status 13
+900000,50,8,0:00.10, 0.00,0.00
+900000,50,16,Command exited with non-zero status 13
+900000,50,16,0:00.10, 0.00,0.00
+900000,50,32,Command exited with non-zero status 13
+900000,50,32,0:00.10, 0.00,0.00
+900000,50,64,Command exited with non-zero status 13
+900000,50,64,0:00.10, 0.00,0.00
+900000,60,2,Command exited with non-zero status 13
+900000,60,2,0:00.10, 0.00,0.00
+900000,60,4,Command exited with non-zero status 13
+900000,60,4,0:00.10, 0.00,0.00
+900000,60,8,Command exited with non-zero status 13
+900000,60,8,0:00.10, 0.00,0.00
+900000,60,16,Command exited with non-zero status 13
+900000,60,16,0:00.10, 0.00,0.00
+900000,60,32,Command exited with non-zero status 13
+900000,60,32,0:00.10, 0.00,0.00
+900000,60,64,Command exited with non-zero status 13
+900000,60,64,0:00.10, 0.00,0.00
+900000,70,2,Command exited with non-zero status 13
+900000,70,2,0:00.10, 0.00,0.00
+900000,70,4,Command exited with non-zero status 13
+900000,70,4,0:00.10, 0.00,0.00
+900000,70,8,Command exited with non-zero status 13
+900000,70,8,0:00.10, 0.00,0.00
+900000,70,16,Command exited with non-zero status 13
+900000,70,16,0:00.10, 0.00,0.00
+900000,70,32,Command exited with non-zero status 13
+900000,70,32,0:00.10, 0.00,0.00
+900000,70,64,Command exited with non-zero status 13
+900000,70,64,0:00.10, 0.00,0.00
+900000,80,2,Command exited with non-zero status 13
+900000,80,2,0:00.10, 0.00,0.00
+900000,80,4,Command exited with non-zero status 13
+900000,80,4,0:00.10, 0.00,0.00
+900000,80,8,Command exited with non-zero status 13
+900000,80,8,0:00.10, 0.00,0.00
+900000,80,16,Command exited with non-zero status 13
+900000,80,16,0:00.10, 0.00,0.00
+900000,80,32,Command exited with non-zero status 13
+900000,80,32,0:00.10, 0.00,0.00
+900000,80,64,Command exited with non-zero status 13
+900000,80,64,0:00.10, 0.00,0.00
+900000,90,2,Command exited with non-zero status 13
+900000,90,2,0:00.10, 0.00,0.00
+900000,90,4,Command exited with non-zero status 13
+900000,90,4,0:00.10, 0.00,0.00
+900000,90,8,Command exited with non-zero status 13
+900000,90,8,0:00.10, 0.00,0.00
+900000,90,16,Command exited with non-zero status 13
+900000,90,16,0:00.10, 0.00,0.00
+900000,90,32,Command exited with non-zero status 13
+900000,90,32,0:00.10, 0.00,0.00
+900000,90,64,Command exited with non-zero status 13
+900000,90,64,0:00.10, 0.00,0.00
+900000,100,2,Command exited with non-zero status 13
+900000,100,2,0:00.10, 0.00,0.00
+900000,100,4,Command exited with non-zero status 13
+900000,100,4,0:00.10, 0.00,0.00
+900000,100,8,Command exited with non-zero status 13
+900000,100,8,0:00.10, 0.00,0.00
+900000,100,16,Command exited with non-zero status 13
+900000,100,16,0:00.10, 0.00,0.00
+900000,100,32,Command exited with non-zero status 13
+900000,100,32,0:00.10, 0.00,0.00
+900000,100,64,Command exited with non-zero status 13
+900000,100,64,0:00.10, 0.00,0.00
+1000000,10,2,Command exited with non-zero status 13
+1000000,10,2,0:00.12, 0.00,0.00
+1000000,10,4,Command exited with non-zero status 13
+1000000,10,4,0:00.10, 0.00,0.00
+1000000,10,8,Command exited with non-zero status 13
+1000000,10,8,0:00.10, 0.00,0.00
+1000000,10,16,Command exited with non-zero status 13
+1000000,10,16,0:00.10, 0.00,0.00
+1000000,10,32,Command exited with non-zero status 13
+1000000,10,32,0:00.10, 0.00,0.00
+1000000,10,64,Command exited with non-zero status 13
+1000000,10,64,0:00.10, 0.00,0.00
+1000000,20,2,Command exited with non-zero status 13
+1000000,20,2,0:00.10, 0.00,0.00
+1000000,20,4,Command exited with non-zero status 13
+1000000,20,4,0:00.10, 0.00,0.00
+1000000,20,8,Command exited with non-zero status 13
+1000000,20,8,0:00.10, 0.00,0.00
+1000000,20,16,Command exited with non-zero status 13
+1000000,20,16,0:00.10, 0.00,0.00
+1000000,20,32,Command exited with non-zero status 13
+1000000,20,32,0:00.10, 0.00,0.00
+1000000,20,64,Command exited with non-zero status 13
+1000000,20,64,0:00.10, 0.00,0.00
+1000000,30,2,Command exited with non-zero status 13
+1000000,30,2,0:00.10, 0.00,0.00
+1000000,30,4,Command exited with non-zero status 13
+1000000,30,4,0:00.10, 0.00,0.00
+1000000,30,8,Command exited with non-zero status 13
+1000000,30,8,0:00.10, 0.00,0.00
+1000000,30,16,Command exited with non-zero status 13
+1000000,30,16,0:00.10, 0.00,0.00
+1000000,30,32,Command exited with non-zero status 13
+1000000,30,32,0:00.10, 0.00,0.00
+1000000,30,64,Command exited with non-zero status 13
+1000000,30,64,0:00.10, 0.00,0.00
+1000000,40,2,Command exited with non-zero status 13
+1000000,40,2,0:00.10, 0.00,0.00
+1000000,40,4,Command exited with non-zero status 13
+1000000,40,4,0:00.10, 0.00,0.00
+1000000,40,8,Command exited with non-zero status 13
+1000000,40,8,0:00.10, 0.00,0.00
+1000000,40,16,Command exited with non-zero status 13
+1000000,40,16,0:00.10, 0.00,0.00
+1000000,40,32,Command exited with non-zero status 13
+1000000,40,32,0:00.10, 0.00,0.00
+1000000,40,64,Command exited with non-zero status 13
+1000000,40,64,0:00.10, 0.00,0.00
+1000000,50,2,Command exited with non-zero status 13
+1000000,50,2,0:00.10, 0.00,0.00
+1000000,50,4,Command exited with non-zero status 13
+1000000,50,4,0:00.10, 0.00,0.00
+1000000,50,8,Command exited with non-zero status 13
+1000000,50,8,0:00.10, 0.00,0.00
+1000000,50,16,Command exited with non-zero status 13
+1000000,50,16,0:00.10, 0.00,0.00
+1000000,50,32,Command exited with non-zero status 13
+1000000,50,32,0:00.10, 0.00,0.00
+1000000,50,64,Command exited with non-zero status 13
+1000000,50,64,0:00.10, 0.00,0.00
+1000000,60,2,Command exited with non-zero status 13
+1000000,60,2,0:00.10, 0.00,0.00
+1000000,60,4,Command exited with non-zero status 13
+1000000,60,4,0:00.10, 0.00,0.00
+1000000,60,8,Command exited with non-zero status 13
+1000000,60,8,0:00.10, 0.00,0.00
+1000000,60,16,Command exited with non-zero status 13
+1000000,60,16,0:00.10, 0.00,0.00
+1000000,60,32,Command exited with non-zero status 13
+1000000,60,32,0:00.10, 0.00,0.00
+1000000,60,64,Command exited with non-zero status 13
+1000000,60,64,0:00.10, 0.00,0.00
+1000000,70,2,Command exited with non-zero status 13
+1000000,70,2,0:00.10, 0.00,0.00
+1000000,70,4,Command exited with non-zero status 13
+1000000,70,4,0:00.10, 0.00,0.00
+1000000,70,8,Command exited with non-zero status 13
+1000000,70,8,0:00.10, 0.00,0.00
+1000000,70,16,Command exited with non-zero status 13
+1000000,70,16,0:00.10, 0.00,0.00
+1000000,70,32,Command exited with non-zero status 13
+1000000,70,32,0:00.10, 0.00,0.00
+1000000,70,64,Command exited with non-zero status 13
+1000000,70,64,0:00.10, 0.00,0.00
+1000000,80,2,Command exited with non-zero status 13
+1000000,80,2,0:00.10, 0.00,0.00
+1000000,80,4,Command exited with non-zero status 13
+1000000,80,4,0:00.10, 0.00,0.00
+1000000,80,8,Command exited with non-zero status 13
+1000000,80,8,0:00.10, 0.00,0.00
+1000000,80,16,Command exited with non-zero status 13
+1000000,80,16,0:00.10, 0.00,0.00
+1000000,80,32,Command exited with non-zero status 13
+1000000,80,32,0:00.11, 0.00,0.00
+1000000,80,64,Command exited with non-zero status 13
+1000000,80,64,0:00.10, 0.00,0.00
+1000000,90,2,Command exited with non-zero status 13
+1000000,90,2,0:00.10, 0.00,0.00
+1000000,90,4,Command exited with non-zero status 13
+1000000,90,4,0:00.10, 0.00,0.00
+1000000,90,8,Command exited with non-zero status 13
+1000000,90,8,0:00.10, 0.00,0.00
+1000000,90,16,Command exited with non-zero status 13
+1000000,90,16,0:00.10, 0.00,0.00
+1000000,90,32,Command exited with non-zero status 13
+1000000,90,32,0:00.10, 0.00,0.00
+1000000,90,64,Command exited with non-zero status 13
+1000000,90,64,0:00.10, 0.00,0.00
+1000000,100,2,Command exited with non-zero status 13
+1000000,100,2,0:00.10, 0.00,0.00
+1000000,100,4,Command exited with non-zero status 13
+1000000,100,4,0:00.10, 0.00,0.00
+1000000,100,8,Command exited with non-zero status 13
+1000000,100,8,0:00.10, 0.00,0.00
+1000000,100,16,Command exited with non-zero status 13
+1000000,100,16,0:00.10, 0.00,0.00
+1000000,100,32,Command exited with non-zero status 13
+1000000,100,32,0:00.10, 0.00,0.00
+1000000,100,64,Command exited with non-zero status 13
+1000000,100,64,0:00.10, 0.00,0.00

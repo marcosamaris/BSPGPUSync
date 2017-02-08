@@ -1,4 +1,0 @@
-==1055== NVPROF is profiling process 1055, command: ./pathfinder 60000000 50 16 0
-==1055== Profiling application: ./pathfinder 60000000 50 16 0
-==1055== Profiling result:
-No events/metrics were profiled.

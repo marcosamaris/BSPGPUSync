@@ -1,4 +1,0 @@
-==897== NVPROF is profiling process 897, command: ./pathfinder 60000000 10 64 0
-==897== Profiling application: ./pathfinder 60000000 10 64 0
-==897== Profiling result:
-No events/metrics were profiled.

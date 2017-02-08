@@ -1,4 +1,0 @@
-==3261== NVPROF is profiling process 3261, command: ./pathfinder 100000000 80 32 0
-==3261== Profiling application: ./pathfinder 100000000 80 32 0
-==3261== Profiling result:
-No events/metrics were profiled.

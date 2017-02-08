@@ -1,0 +1,114 @@
+How to Set Up a Benchmark Directory
+-----------------------------------
+
+1) Directory setup
+2) Makefiles
+3) How the driver invokes benchmarks
+4) Benchmark descriptions
+
+
+1. DIRECTORY SETUP
+
+Each benchmark resides in a separate, self-contained folder in the benchmarks/
+subdirectory of the parboil root directory.  This subdirectory may be a
+regular directory, a symbolic link to another directory, or a directory full
+of symbolic links to other directories.  Once a benchmark is set up, the
+driver will automatically scan the benchmark and allow users to run it.
+
+The following files and subdirectories should be present in a benchmark
+directory:
+
+ src/
+    Source code of the benchmark.  There should be one subdirectory for
+    each version of the source code.  The subdirectory should contain a
+    makefile and source code as specified in section MAKEFILES.
+
+    A 'DESCRIPTION' file may optionally be put here.  This file's contents
+    will be displayed by the driver's 'describe' command.
+
+ input/
+    Input files for when the benchmark is run.  There should be one
+    subdirectory for each data set.  If the benchmark does not requre input
+    data, these files may be omitted.
+
+    A subdirectory may optionally contain a 'DESCRIPTION' file, which
+    specifies how the benchmark is invoked.
+
+ output/
+    Output files for the benchmark.  There should be one subdirectory for
+    each data set, containing one file.  This file is compared against the
+    actual benchmark output to check whether the benchmark works correctly.
+
+ tools/
+    Tools used in testing a benchmark.
+
+    An executable named 'compare-output' should be put in this directory.
+    This executable is used for deciding whether two separate output files
+    produced by different runs of the program are equivalent.
+
+The following subdirectories may be created and/or deleted by the driver:
+
+ build/
+    Compiled code is put in this directory.
+
+ run/
+    Ouptut files are put here.
+
+2. MAKEFILES
+
+The benchmark directories are set up to leave benchmark sources in the src/
+directory, and put object and executable code in the build/ directory.
+Makefiles should generally follow this pattern:
+
+ # Include variable definitions
+ include $(PARBOIL_ROOT)/common/mk/common.mk
+
+ # Direct compilation and linking
+ SRCDIR_OBJS=parser.o partition.o parts.o parent.o
+ LINK_MODE=C
+
+ # Specify target
+ all : $(BIN)
+
+ # Include makefile rules
+ include $(PARBOIL_ROOT)/common/mk/rules.mk
+
+ # Other rules go here
+
+The following variables are passed to the makefile on the command line:
+
+ PARBOIL_ROOT	The root directory of the benchmark suite
+ SRCDIR		The directory containing the source files
+ BUILDDIR	The directory into which compiled files are emitted
+ BIN		The name of the binary that should be produced
+
+Supported link modes are "C" for C/C++ code and "CUDA" for CUDA files.
+Makefiles for CUDA code should also include cuda.mk and cuda_rules.mk.
+
+3. HOW THE DRIVER INVOKES BENCHMARKS
+
+The driver will invoke a benchmark in the benchmark's root directory.
+It will pass a number of parameters on the command line.  Input files
+are passed using the "-i" switch followed by a comma-separated list of
+input files.  The output file name is passed using the "-o" switch followed
+by a single filename.  The benchmark should write its output to that file.
+If no filename is passed, no output should be written.
+
+The DESCRIPTION file in an input data set directory, if present, controls
+the parameters passed to the benchmark.  If a line like the following is
+present:
+
+Parameters: --produce-correct-output
+
+then everything after the colon will be passed as additional parameters to
+the benchmark.  If a line like the following is present:
+
+Inputs: partial.txt parameters.txt
+
+Then the file names will be joined into a comma-separated string
+and passed as the argument to the "-i" flag when the benchmark is invoked.
+
+4. BENCHMARK DESCRIPTIONS
+
+A description file can be put in the benchmark directory.  Its contents are
+displayed by the driver's 'describe' command.

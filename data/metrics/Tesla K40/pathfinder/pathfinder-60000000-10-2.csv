@@ -1,4 +1,0 @@
-==862== NVPROF is profiling process 862, command: ./pathfinder 60000000 10 2 0
-==862== Profiling application: ./pathfinder 60000000 10 2 0
-==862== Profiling result:
-No events/metrics were profiled.

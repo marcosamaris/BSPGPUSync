@@ -1,4 +1,0 @@
-==3017== NVPROF is profiling process 3017, command: ./pathfinder 100000000 40 8 0
-==3017== Profiling application: ./pathfinder 100000000 40 8 0
-==3017== Profiling result:
-No events/metrics were profiled.

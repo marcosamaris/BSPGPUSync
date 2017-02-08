@@ -1,4 +1,0 @@
-==2710== NVPROF is profiling process 2710, command: ./pathfinder 90000000 80 2 0
-==2710== Profiling application: ./pathfinder 90000000 80 2 0
-==2710== Profiling result:
-No events/metrics were profiled.

@@ -1,4 +1,0 @@
-==25171== NVPROF is profiling process 25171, command: ./gaussian -s seq
-==25171== Profiling application: ./gaussian -s seq
-==25171== Profiling result:
-No events/metrics were profiled.

@@ -1,4 +1,0 @@
-==2006== NVPROF is profiling process 2006, command: ./pathfinder 80000000 50 2 0
-==2006== Profiling application: ./pathfinder 80000000 50 2 0
-==2006== Profiling result:
-No events/metrics were profiled.

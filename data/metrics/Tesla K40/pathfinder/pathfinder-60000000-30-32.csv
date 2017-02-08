@@ -1,4 +1,0 @@
-==976== NVPROF is profiling process 976, command: ./pathfinder 60000000 30 32 0
-==976== Profiling application: ./pathfinder 60000000 30 32 0
-==976== Profiling result:
-No events/metrics were profiled.
