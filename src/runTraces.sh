@@ -2,7 +2,7 @@
 
 gpu=Tesla
 
-declare -a apps=( backprop gaussianS gaussianC heartwall  hotspot hotspot3D lavaMD lud nw )
+declare -a apps=( gaussianS )
 #gaussian
 
 declare -A execApps
@@ -38,13 +38,13 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "gaussianS" ]]; then
-        for i in `seq 16 16 4096 `; do
+        for i in `seq 16 16 2048 `; do
             /usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]} -f ../../data/gaussian/matrix$i.txt -q 2> temp
             saveTraces
         done
 	fi
 	if [[ "${app}" == "gaussianC" ]]; then	
-        for i in `seq 16 16 4096 `; do
+        for i in `seq 16 16 2048 `; do
 			/usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]} -s ${i} -q 2> temp
             saveTraces
         done
@@ -59,7 +59,7 @@ for app in "${apps[@]}"; do
     
     if [[ "${app}" == "hotspot" ]]; then
         for i in 64 512 1024; do
-            for j in `seq 32 32 8192 `; do
+            for j in `seq 32 32 4096 `; do
                 /usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]} ${i} 2 ${j} ../../data/hotspot/temp_${i} ../../data/hotspot/power_${i} output.out 2> temp
 				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' | grep $gpu >> ../../../logs/${app}/${app}-traces.csv
 				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' >> ../../../logs/${app}/${app}-time.csv
