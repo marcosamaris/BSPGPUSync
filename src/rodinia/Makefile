@@ -15,7 +15,7 @@ all:
 	cd cuda/lavaMD;			make;	cp lavaMD $(CUDA_BIN_DIR)
 	cd cuda/lud; 			make;	cp lud_cuda $(CUDA_BIN_DIR)
 	cd cuda/nw; 			make;	cp needle $(CUDA_BIN_DIR)
-	cd cuda/pathfinder;		make;	cp pathfinder $(CUDA_BIN_DIR)
+	#cd cuda/pathfinder;		make;	cp pathfinder $(CUDA_BIN_DIR)
 
 clean:
 	cd $(CUDA_BIN_DIR); rm -f *
