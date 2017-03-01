@@ -7,8 +7,7 @@ declare -a apps=( gaussianS )
 
 declare -A execApps
 execApps["backprop"]="./backprop " 
-execApps["gaussianS"]="./gaussian " 
-execApps["gaussianC"]="./gaussian " 
+execApps["gaussian"]="./gaussian " 
 execApps["heartwall"]="./heartwall " 
 execApps["hotspot"]="./hotspot " 
 execApps["hotspot3D"]="./3D " 
@@ -25,8 +24,8 @@ function saveTraces {
 }
 
 for app in "${apps[@]}"; do 
-    rm -rf ../../logs/${app}/ tempTime temp
-    mkdir -p ../../logs/${app}/ 
+    rm -rf ../../traces/ ${app}/ 
+    mkdir -p ../../traces/${app}/ 
     cd ${app}
     make clean; make
     
@@ -37,18 +36,12 @@ for app in "${apps[@]}"; do
         done
     fi
     
-    if [[ "${app}" == "gaussianS" ]]; then
+    if [[ "${app}" == "gaussian" ]]; then
         for i in `seq 16 16 2048 `; do
             /usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]} -f ../../data/gaussian/matrix$i.txt -q 2> temp
             saveTraces
         done
 	fi
-	if [[ "${app}" == "gaussianC" ]]; then	
-        for i in `seq 16 16 2048 `; do
-			/usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]} -s ${i} -q 2> temp
-            saveTraces
-        done
-    fi
     
     if [[ "${app}" == "heartwall" ]]; then
         for i in `seq 20 104`; do
@@ -111,11 +104,14 @@ for app in "${apps[@]}"; do
                 done
             done
         done
-    fi     
+    fi
+    rm -f tempTime temp     
   
     cd ..
 done
     
-cd ../..
 
+cd ../
+make clean
+cd ../
 
