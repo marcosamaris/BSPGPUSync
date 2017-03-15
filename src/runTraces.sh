@@ -2,7 +2,7 @@
 
 gpu=Tesla
 
-declare -a apps=( gaussianS )
+declare -a apps=( backprop gaussian heartwall hotspot hotspot3D lavaMD lud nw )
 #gaussian
 
 declare -A execApps
@@ -19,13 +19,13 @@ execApps["pathfinder"]="./pathfinder "
 cd rodinia/cuda/
 
 function saveTraces {		
-    cat temp | awk -v var=$i '{print var"," $0}' | grep $gpu >> ../../../logs/${app}/${app}-traces.csv
-    cat tempTime | awk -v var=$i '{print var"," $0}' >> ../../../logs/${app}/${app}-time.csv
+    cat temp | awk -v var=$i '{print var"," $0}' | grep $gpu >> ../../../traces/${app}-traces.csv
+    cat tempTime | awk -v var=$i '{print var"," $0}' >> ../../../traces/${app}-time.csv
 }
 
 for app in "${apps[@]}"; do 
-    rm -rf ../../traces/ ${app}/ 
-    mkdir -p ../../traces/${app}/ 
+    #rm -rf ../../traces/$(app)*  
+    mkdir -p ../../traces 
     cd ${app}
     make clean; make
     
@@ -54,8 +54,8 @@ for app in "${apps[@]}"; do
         for i in 64 512 1024; do
             for j in `seq 32 32 4096 `; do
                 /usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]} ${i} 2 ${j} ../../data/hotspot/temp_${i} ../../data/hotspot/power_${i} output.out 2> temp
-				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' | grep $gpu >> ../../../logs/${app}/${app}-traces.csv
-				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' >> ../../../logs/${app}/${app}-time.csv
+				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' | grep $gpu >> ../../../traces/${app}-traces.csv
+				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' >> ../../../traces/${app}/${app}-time.csv
             done
         done
     fi
@@ -64,8 +64,8 @@ for app in "${apps[@]}"; do
         for i in 2 4 8; do
             for j in `seq 100 10 1000 `; do
                 /usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]} 512 ${i} ${j} ../../data/hotspot3D/power_512x${i} ../../data/hotspot3D/temp_512x${i} output.out 2> temp
-				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  | grep $gpu >> ../../../logs/${app}/${app}-traces.csv
-				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  >> ../../../logs/${app}/${app}-time.csv				
+				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  | grep $gpu >> ../../../traces/${app}-traces.csv
+				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  >> ../../../traces/${app}-time.csv				
             done
         done
     fi      
@@ -88,8 +88,8 @@ for app in "${apps[@]}"; do
         for i in `seq 256 256 4096`; do
             for j in `seq 1 10 `; do
                 /usr/bin/time -o tempTime -f "%E, %U,%S" nvprof   --print-gpu-trace --csv -u s ${execApps["${app}"]}  ${i} ${j} 2> temp
-				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  | grep $gpu >> ../../../logs/${app}/${app}-traces.csv
-				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  >> ../../../logs/${app}/${app}-time.csv				
+				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  | grep $gpu >> ../../../traces/${app}-traces.csv
+				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}'  >> ../../../traces/${app}-time.csv				
             done
         done
     fi 
