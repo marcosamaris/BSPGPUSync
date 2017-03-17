@@ -35,8 +35,8 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "gaussian" ]]; then
-        for i in `seq 16 16 2048 `; do
-            nvprof --metrics all --events all   --print-gpu-trace --csv -u s ${execApps["${app}"]} -f ../../data/gaussian/matrix$i.txt -q 2> temp
+        for i in `seq 256 256 8192 `; do
+            nvprof --metrics all --events all   --print-gpu-trace --csv -u s ${execApps["${app}"]} -s $i -q 2> temp
             saveTraces
         done
 	fi
