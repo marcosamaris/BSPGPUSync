@@ -1,6 +1,4 @@
 library(ggplot2)
-library(reshape2)
-library(plyr)
 
 cbbPalette <- gray(1:9/ 12) #c("red", "blue", "darkgray", "orange","black","brown", "lightblue","violet")
 dirpath <- "~/Dropbox/Doctorate/GIT/BSyncGPGPU/"
@@ -8,8 +6,8 @@ setwd(paste(dirpath, sep=""))
 
 gpus <- read.table("./data/deviceInfo.csv", sep=",", header=T)
 NoGPU <- dim(gpus)[1]
-namesTraces <- read.csv("./data/Tesla-K40/tracesNames.csv",header = T, sep = ",")
 
+namesTraces <- read.csv("./data/Tesla-K40/tracesNames.csv",header = T, sep = ",")
 
 # apps <- c("matMul_gpu_uncoalesced","matMul_gpu", "matMul_gpu_sharedmem_uncoalesced", "matMul_gpu_sharedmem",
 #          "matrix_sum_normal", "matrix_sum_coalesced", 
@@ -18,26 +16,6 @@ namesTraces <- read.csv("./data/Tesla-K40/tracesNames.csv",header = T, sep = ","
 apps <- c("backprop", "gaussian", "heartwall",  "hotspot", "hotspot3D", "lavaMD", "lud", "nw") #bpnn_layerforward_CUDA
 
 flopsTheoreticalPeak <- gpus['max_clock_rate']*gpus['num_of_cores']
-lambda <- matrix(nrow = NoGPU, ncol = length(apps), 0, dimnames = gpus['gpu_name'])
-
-
-appList <- list()
-
-appList$backprop <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/backprop-traces.csv", sep=""), header=F,  col.names = names(namesTraces)))
-
-appList$gaussian <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/gaussian-traces.csv", sep=""), header=F,  col.names = names(namesTraces)))
-
-appList$heartwall <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/heartwall-traces.csv", sep=""), header=F,  col.names = names(namesTraces)))
-
-appList$hotspot <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/hotspot-traces.csv", sep=""), header=F,  col.names = c("Input.Size", names(namesTraces))))
-
-appList$hotspot3D <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/hotspot3D-traces.csv", sep=""), header=F,  col.names = c("Input.Size", names(namesTraces))))
-
-appList$lavaMD <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/lavaMD-traces.csv", sep=""), header=F,  col.names = c(names(namesTraces))))
-
-appList$lud <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/lud-traces.csv", sep=""), header=F,  col.names = c(names(namesTraces))))
-
-appList$nw <- data.frame(read.csv(paste("./data/", gpus[8,'gpu_name'],"/" , "traces", "/nw-traces.csv", sep=""), header=F,  col.names = c("Input.Size", names(namesTraces))))
 
 latencySharedMemory <- 5; #Cycles per processor
 latencyGlobalMemory <- latencySharedMemory* 100; #Cycles per processor
@@ -46,6 +24,50 @@ latencyL1 <- latencySharedMemory; #Cycles per processor
 latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
 
 
+lambdaGTX680 <- 1
+lambdaK40 <- 1
+lambdaTitan <- 1
+lambdaK20 <- 1
+lambdaQ <- 1
+lambdaTitanX <- 1
+lambdaTitanBlack <- 1
+lambdaGTX980 <- 1
+lambdaGTX970 <- 1
+lambdaGTX750 <- 1
+
+lambda <- matrix(nrow = NoGPU, ncol = 13, 0, dimnames = gpus['gpu_name'])
+lambda[1,] <- lambdaGTX680
+lambda[2,] <- lambdaK40
+lambda[3,] <- lambdaK20
+lambda[5,] <- lambdaTitan
+lambda[6,] <- lambdaQ
+lambda[7,] <- lambdaGTX750
+lambda[8,] <- lambdaTitanX
+lambda[9,] <- lambdaGTX980
+lambda[10,] <- lambdaGTX970
+
+AllKernel <- list()
+for (j in c(1, 2, 3, 6, 7, 9, 10)) {
+    
+    appList <- list()
+    
+    appList$backprop <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/backprop-traces.csv", sep=""), header=F,  col.names = names(namesTraces)))
+    
+    appList$gaussian <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/gaussian-traces.csv", sep=""), header=F,  col.names = names(namesTraces)))
+    
+    appList$heartwall <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/heartwall-traces.csv", sep=""), header=F,  col.names = names(namesTraces)))
+    
+    appList$hotspot <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/hotspot-traces.csv", sep=""), header=F,  col.names = c("Input.Size", names(namesTraces))))
+    
+    appList$hotspot3D <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/hotspot3D-traces.csv", sep=""), header=F,  col.names = c("Input.Size", names(namesTraces))))
+    
+    appList$lavaMD <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/lavaMD-traces.csv", sep=""), header=F,  col.names = c(names(namesTraces))))
+    
+    appList$lud <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/lud-traces.csv", sep=""), header=F,  col.names = c(names(namesTraces))))
+    
+    appList$nw <- data.frame(read.csv(paste("./data/", gpus[j,'gpu_name'],"/" , "traces", "/nw-traces.csv", sep=""), header=F,  col.names = c("Input.Size", names(namesTraces))))
+    
+    
 ##### Back Propagation bpnn_layerforward_CUDA
 
     N <- seq(8192, 65536, 1024)
@@ -65,10 +87,11 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- ((1 - L1Effect - L2Effect)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2);
     CommSM <- (((tileWidth * tileWidth))*latencySharedMemory);
-    lambda <- 6.6
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,1]);
     
-    backpropLayer <- timeKernel/subset(appList$backprop, Registers.Per.Thread == 11)["Duration"]
+    backpropLayer <- timeKernel/subset(appList$backprop[grep("bpnn_layerforward_CUDA", appList$backprop$Name),])["Duration"]
+        
     
 
     ##### Back Propagation bpnn_adjust_weights_cuda
@@ -82,15 +105,15 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- ((1 - L1Effect - L2Effect)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2);
     CommSM <- (((tileWidth + tileWidth + log2(N)))*latencySharedMemory);
-    lambda=1.1
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,2]);
     
-    backpropWeights <- timeKernel/subset(appList$backprop, Registers.Per.Thread == 21)["Duration"]
+    backpropWeights <- timeKernel/subset(appList$backprop[grep("bpnn_adjust_weights_cuda", appList$backprop$Name),])["Duration"]
     
     # boxplot(backpropWeights$Duration,backpropLayer$Duration)
     ########################### Gaussian Fan1
     
-    N <- c(16,32, 64, 128, seq(256, 2048, 16))
+    N <- seq(256, 2048, 16)
     
     numberthreads <- NULL
     for (i in 1:length(N)){
@@ -107,10 +130,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- ((1 - L1Effect - L2Effect)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2);
     CommSM <- 0
-    lambda <- .0005
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,3]);
     
-    fan1 <- timeKernel/subset(appList$gaussian, Registers.Per.Thread == 13)["Duration"]
+    fan1 <- timeKernel/subset(appList$gaussian[grep("Fan1", appList$gaussian$Name),])["Duration"]
     
     ########################### Gaussian Fan2
     
@@ -167,9 +190,9 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- ((1 - L1Effect - L2Effect)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2);
     CommSM <- 0
-    lambda = 0.4
+
     # for (i in 1:length(N)){
-    #     timeKernel <- N[i]*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+    #     timeKernel <- N[i]*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,i]);
     #     fan2 <- timeKernel/subset(appList$gaussian, Registers.Per.Thread == 14 & Input.Size == N[i])["Duration"]
     #     boxplot(fan2$Duration, main=N[i])
     # }
@@ -178,32 +201,9 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     # plot(1:2047, 
     #      subset(appList$gaussian, Registers.Per.Thread == 14 & Input.Size == 2048)["Duration"])
 
-    timeKernel <- 4096*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
-    fan2 <- timeKernel/subset(appList$gaussian, Registers.Per.Thread == 14 & Input.Size == N[i])["Duration"]
+    timeKernel <- 4096*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,4]);
+    fan2 <- timeKernel/subset(appList$gaussian[grep("Fan2", appList$gaussian$Name),])["Duration"]
     
-    
-    TempPlot <- data.frame(row.names =  c("App", "Accuracy"))
-    
-    TempPlot <- rbind(TempPlot,data.frame("App"=rep("backpropLayer",length(backpropLayer)),"Accuracy"=backpropLayer$Duration))
-    TempPlot <- rbind(TempPlot,data.frame("App"=rep("backpropWeights",length(backpropWeights)),"Accuracy"=backpropWeights$Duration))
-    TempPlot <- rbind(TempPlot,data.frame("App"=rep("fan1",length(fan1)),"Accuracy"=fan1$Duration))
-    TempPlot <- rbind(TempPlot,data.frame("App"=rep("fan2",length(fan2)),"Accuracy"=fan2$Duration))
-    
-    
-    Graph <- ggplot(data=TempPlot, aes(x=App, y=Accuracy, group=App, col=App)) + 
-        geom_boxplot( size=1) + stat_boxplot(geom ='errorbar') +
-        ggtitle(paste("Accuracy of 4 kernels of Rodinia in ", gpus[8,'gpu_name'], sep="")) +
-        theme(plot.title = element_text(hjust = 0.5)) +
-        theme(plot.title = element_text(family = "Times", face="bold", size=30)) +
-        theme(axis.title = element_text(family = "Times", face="bold", size=30)) +
-        theme(axis.text  = element_text(family = "Times", face="bold", size=30, colour = "Black")) +
-        theme(legend.title  = element_text(family = "Times", face="bold", size=0)) +
-        theme(legend.text  = element_text(family = "Times", face="bold", size=25)) +
-        theme(legend.key.size = unit(1, "cm")) +
-        theme(legend.position = "none")
-    
-    ggsave(paste("./images/AnalyticalModel-", gpus[8,'gpu_name'], ".pdf",sep=""), Graph, device = pdf, height=21, width=29)
-    write.csv(TempPlot, file = paste("./results/AnalyticalModel-", gpus[8,'gpu_name'], ".csv",sep=""))
     
         ########################### Hearthwall kernel
     
@@ -226,10 +226,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     frame <- 656*744
     CommGM <- (frame)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (frame*N)*latencySharedMemory;
-    lambda=0.21
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,5]);
     
-    kernel <- timeKernel/subset(appList$heartwall, Registers.Per.Thread == 31)["Duration"]
+    kernel <- timeKernel/subset(appList$heartwall[grep("kernel", appList$heartwall$Name),])["Duration"]
     
     ########################### Hotspot calculate_temp
     
@@ -255,10 +255,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
 
     CommGM <- (1)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (N)*latencySharedMemory;
-    lambda = 1
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,6]);
     
-    calculate_temp <- timeKernel/subset(appList$hotspot, Registers.Per.Thread == 38)["Duration"]
+    calculate_temp <- timeKernel/subset(appList$hotspot[grep("calculate_temp", appList$hotspot$Name),])["Duration"]
     
     
     ########################### Hotspot_3D hotspotOpt1
@@ -284,10 +284,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- (1)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (N)*latencySharedMemory;
-    lambda = 1
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,7]);
     
-    hotspotOpt1 <- timeKernel/subset(appList$hotspot3D, Registers.Per.Thread == 30)["Duration"]
+    hotspotOpt1 <- timeKernel/subset(appList$hotspot3D[grep("hot", appList$hotspot3D$Name),])["Duration"]
     
     ########################### lavaMD kernel_gpu_cuda
     
@@ -308,10 +308,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- (N*N)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (N*N)*latencySharedMemory;
-    lambda = 0.01
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,8]);
     
-    kernel_gpu_cuda <- timeKernel/subset(appList$lavaMD, Registers.Per.Thread == 58)["Duration"]
+    kernel_gpu_cuda <- timeKernel/subset(appList$lavaMD[grep("kernel", appList$lavaMD$Name),])["Duration"]
     
     ########################### LU decomposition - lud_diagonal
     N <- seq(256, 8192, 256)
@@ -333,10 +333,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- (N_diagonal)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (N_diagonal)*latencySharedMemory;
-    lambda = 0.261
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,9]);
     
-    lud_diagonal <- timeKernel/subset(appList$lud, Registers.Per.Thread == 36)["Duration"]
+    lud_diagonal <- timeKernel/subset(appList$lud[grep("diagonal", appList$lud$Name),])["Duration"]
     
     ######################## LUD lud_perimeter
     N_perimeter <- rep(N, N/16 -1)
@@ -356,10 +356,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- (N_diagonal)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (N_diagonal)*latencySharedMemory;
-    lambda = 0.261
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,10]);
     
-    lud_perimeter <- timeKernel/subset(appList$lud, Registers.Per.Thread == 46)["Duration"]
+    lud_perimeter <- timeKernel/subset(appList$lud[grep("perimeter", appList$lud$Name),])["Duration"]
     
     ############################ LUD lud_internal
     N_perimeter <- rep(N, N/16 -1)
@@ -379,14 +379,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- (N_diagonal)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (N_diagonal)*latencySharedMemory;
-    lambda = 0.261
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,11]);
     
-    lud_internal <- timeKernel/subset(appList$lud, Registers.Per.Thread == 21)["Duration"]
-    
-    lud_diagonal <- subset(temp, Registers.Per.Thread == 36)
-    lud_perimeter <- subset(temp, Registers.Per.Thread == 46)
-    lud_internal <- subset(temp, Registers.Per.Thread == 21)
+    lud_internal <- timeKernel/subset(appList$lud[grep("internal", appList$lud$Name),])["Duration"]
     
     
     ######################### Needleman-Wunsch needle_cuda_shared_1
@@ -412,10 +408,10 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     
     CommGM <- (1)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
     CommSM <- (N)*latencySharedMemory;
-    lambda = 0.01
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,12]);
     
-    needle_cuda_shared_1 <- timeKernel/subset( appList$nw[grep("_1", appList$nw$Name),])["Duration"]
+    needle_cuda_shared_1 <- timeKernel/subset(appList$nw[grep("_1", appList$nw$Name),])["Duration"]
     
     ######################### Needleman-Wunsch needle_cuda_shared_2
     
@@ -439,44 +435,78 @@ latencyL2 <- latencyGlobalMemory*0.5; #Cycles per processor
     L2Effect <- 0
     
     CommGM <- (1)*latencyGlobalMemory + L1Effect*latencyL1 + L2Effect*latencyL2;
-    CommSM <- (N)*latencySharedMemory;
-    lambda = 0.01
-    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)*lambda);
+    CommSM <- (1)*latencySharedMemory;
+
+    timeKernel <- numberthreads*(ComputationKernel + CommGM + CommSM)/((flopsTheoreticalPeak[2,]*10^6)* lambda[j,13]);
     
     needle_cuda_shared_2 <- timeKernel/subset( appList$nw[grep("_2", appList$nw$Name),])["Duration"]
     
-    appAllKernel <- data.frame()
-    appAllKernel <- rbind(appAllKernel, cbind("backpropLayer", backpropLayer[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("backpropWeights", backpropWeights[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("fan1", fan1[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("fan2", fan2[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("kernel", kernel[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("calculate_temp", calculate_temp[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("hotspotOpt1", hotspotOpt1[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("kernel_gpu_cuda", kernel_gpu_cuda[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("lud_diagonal", lud_diagonal[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("lud_perimeter", lud_perimeter[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("lud_internal", lud_internal[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("needle_cuda_shared_1", needle_cuda_shared_1[,]))
-    appAllKernel <- rbind(appAllKernel, cbind("needle_cuda_shared_2", needle_cuda_shared_2[,]))
+
     
-    names(appAllKernel) <- c("Kernel", "Accuracy")
+    # 
+    # TempPlot <- data.frame(row.names =  c("App", "Accuracy"))
+    # 
+    # TempPlot <- rbind(TempPlot,data.frame("App"=rep("backpropLayer",length(backpropLayer)),"Accuracy"=backpropLayer$Duration))
+    # TempPlot <- rbind(TempPlot,data.frame("App"=rep("backpropWeights",length(backpropWeights)),"Accuracy"=backpropWeights$Duration))
+    # TempPlot <- rbind(TempPlot,data.frame("App"=rep("fan1",length(fan1)),"Accuracy"=fan1$Duration))
+    # TempPlot <- rbind(TempPlot,data.frame("App"=rep("fan2",length(fan2)),"Accuracy"=fan2$Duration))
+    # 
+    # 
+    # Graph <- ggplot(data=TempPlot, aes(x=App, y=Accuracy, group=App, col=App)) + 
+    #     geom_boxplot( size=1) + stat_boxplot(geom ='errorbar') +
+    #     ggtitle(paste("Accuracy of 4 kernels of Rodinia in ", gpus[j,'gpu_name'], sep="")) +
+    #     theme(plot.title = element_text(hjust = 0.5)) +
+    #     theme(plot.title = element_text(family = "Times", face="bold", size=30)) +
+    #     theme(axis.title = element_text(family = "Times", face="bold", size=30)) +
+    #     theme(axis.text  = element_text(family = "Times", face="bold", size=30, colour = "Black")) +
+    #     theme(legend.title  = element_text(family = "Times", face="bold", size=0)) +
+    #     theme(legend.text  = element_text(family = "Times", face="bold", size=25)) +
+    #     theme(legend.key.size = unit(1, "cm")) +
+    #     theme(legend.position = "none")
+    # 
+    # ggsave(paste("./images/AnalyticalModel-", gpus[j,'gpu_name'], ".pdf",sep=""), Graph, device = pdf, height=21, width=29)
+    # write.csv(TempPlot, file = paste("./results/AnalyticalModel-", gpus[j,'gpu_name'], ".csv",sep=""))
+    
+    appAllKernel <- data.frame()
+    appAllKernel <- rbind(appAllKernel, cbind("backpropLayer", paste(gpus[j,'gpu_name'],sep=""), backpropLayer[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("backpropWeights",  paste(gpus[j,'gpu_name'],sep=""), backpropWeights[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("fan1",  paste(gpus[j,'gpu_name'],sep=""), fan1[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("fan2",  paste(gpus[j,'gpu_name'],sep=""), fan2[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("kernel",  paste(gpus[j,'gpu_name'],sep=""), kernel[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("calculate_temp",  paste(gpus[j,'gpu_name'],sep=""), calculate_temp[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("hotspotOpt1",  paste(gpus[j,'gpu_name'],sep=""), hotspotOpt1[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("kernel_gpu_cuda",  paste(gpus[j,'gpu_name'],sep=""), kernel_gpu_cuda[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("lud_diagonal",  paste(gpus[j,'gpu_name'],sep=""), lud_diagonal[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("lud_perimeter",  paste(gpus[j,'gpu_name'],sep=""), lud_perimeter[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("lud_internal",  paste(gpus[j,'gpu_name'],sep=""), lud_internal[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("needle_cuda_shared_1",  paste(gpus[j,'gpu_name'],sep=""), needle_cuda_shared_1[,]))
+    appAllKernel <- rbind(appAllKernel, cbind("needle_cuda_shared_2",  paste(gpus[j,'gpu_name'],sep=""), needle_cuda_shared_2[,]))
+    
+    names(appAllKernel) <- c("Kernel", "GPU", "Accuracy")
     
     appAllKernel$Accuracy <- as.numeric(levels(appAllKernel$Accuracy))[appAllKernel$Accuracy]
+
     
-    Graph <- ggplot(data=appAllKernel, aes(x=Kernel, y=Accuracy, group=Kernel, color=Kernel)) + 
-        ggtitle("Accuracy of the BSP-based model on Rodinia ") +
+    Graph <- ggplot(data=appAllKernel, aes(x=Kernel, y=Accuracy, group=Kernel, color=Kernel)) +
+        ggtitle(paste("Accuracy of the BSP-based model on Rodinia ", gpus[j,'gpu_name'], sep="")) +
         geom_boxplot() + scale_y_log10(breaks = scales::trans_breaks("log10", function(x) 10^x),
-                                       labels = scales::trans_format("log10", scales::math_format(10^.x))) + 
-        annotation_logticks(sides = "l") + 
+                                       labels = scales::trans_format("log10", scales::math_format(10^.x))) +
+        annotation_logticks(sides = "l") +
         stat_boxplot(geom ='errorbar') +
         theme(legend.position ="none") +
         theme(plot.title = element_text(family = "Times", face="bold", size=50)) +
         theme(axis.title = element_text(family = "Times", face="bold", size=50)) +
         theme(axis.text  = element_text(family = "Times", face="bold", size=50, colour = "Black")) +
-        theme(axis.text.x=element_blank()) 
-        
-        
-    ggsave(paste("./images/Rodinia-BSP-Modeling.pdf",sep=""), Graph, device = pdf, height=21, width=29)
-    write.csv(appAllKernel, file = "./results/Rodinia-BSP-Modeling.csv")
+        theme(axis.text.x=element_blank())
+
+    ggsave(paste("./images/Rodinia-BSP-Modeling-",gpus[j,'gpu_name'], ".pdf",sep=""), Graph, device = pdf, height=21, width=29)
+    write.csv(appAllKernel, file = paste("./results/Rodinia-BSP-Modeling-", gpus[j,'gpu_name'],".csv", sep=""))
     
+    AllKernel <- rbind(AllKernel, appAllKernel)
+}
+
+
+
+
+
+
