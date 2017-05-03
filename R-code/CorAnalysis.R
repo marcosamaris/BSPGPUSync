@@ -132,5 +132,5 @@ mosthighlycorrelated <- function(mydataframe,numtoreport)
   head(fm[order(abs(fm$Correlation),decreasing=T),],n=numtoreport)
 }
 
-a<-mosthighlycorrelated(Data[1:49], 409)
+a<-mosthighlycorrelated(temp[which(abs(corTemp) >= .75)], 50)
 dim(Data)
