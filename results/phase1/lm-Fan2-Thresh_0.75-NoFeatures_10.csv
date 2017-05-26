@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","sm_cta_launched","1.05681357178554"
+"2","elapsed_cycles_sm","1.01464718342648"
+"3","inst_issued1","0.923674417928999"
+"4","inst_issued2",NA
+"5","active_cycles","1.02214469177719"
+"6","issued_control.flow_instructions","0.994099329878754"
+"7","executed_control.flow_instructions","1.06460075413956"
+"8","issue_slots",NA
+"9","control.flow_instructions","0.933551842454064"
+"10","misc_instructions","0.995424697693478"
+"11","theoretical_flops","0"
+"12","memory_clock","0"
+"13","duration","0"
+"14","gpu_id","0"

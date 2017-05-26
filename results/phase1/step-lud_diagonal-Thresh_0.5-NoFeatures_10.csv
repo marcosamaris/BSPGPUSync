@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","static.smem","1.00267655594946"
+"2","flop_efficiency.peak_single.","1.02709713819842"
+"3","global_load_transactions_per_request","1.05188840161019"
+"4","issue_slot_utilization",NA
+"5","shared_memory_store_throughput","1.0299027070278"
+"6","device_memory_read_throughput","1.02293931596746"
+"7","device_memory_write_throughput","0.960800044647682"
+"8","l2_throughput_.reads.",NA
+"9","executed_load.store_instructions","0.957015420155262"
+"10","ecc_throughput","0.956815933647599"
+"11","max_clock_rate","0"
+"12","duration","0"
+"13","gpu_id","0"
+"14","static.smem","0"

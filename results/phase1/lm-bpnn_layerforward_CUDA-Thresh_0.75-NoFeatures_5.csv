@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","grid.y","1.00092041826783"
+"2","global_load_transactions","1.02163910208834"
+"3","multiprocessor_activity","0.994506991333111"
+"4","achieved_occupancy",NA
+"5","issued_control.flow_instructions","0.960672219021645"
+"6","bus","1.00010669543759"
+"7","bandwith","1.18674546018813"
+"8","duration",NA
+"9","gpu_id","0.944115735889584"
+"10","0","0.986361279573576"

@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","device_memory_read_transactions","0.981251931901061"
+"2","global_load_transactions","1.00303875558043"
+"3","shared_load_transactions","1.00545526460842"
+"4","achieved_occupancy",NA
+"5","flop_efficiency.peak_single.","1.00071956304034"
+"6","bus","1.01170510272098"
+"7","duration","1.11952801214645"
+"8","gpu_id",NA
+"9","0","0.979977859387714"
+"10","device_memory_read_transactions","1.01279659728607"

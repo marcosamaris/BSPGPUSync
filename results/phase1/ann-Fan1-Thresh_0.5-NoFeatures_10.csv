@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","gst_request","0.983878738558328"
+"2","issued_load.store_instructions","1.00415313092972"
+"3","inst_issued2","1.00090703548454"
+"4","active_cycles",NA
+"5","issued_ipc","1.00610773308328"
+"6","device_memory_read_transactions","1.01187821155122"
+"7","executed_control.flow_instructions","1.02932403458048"
+"8","l1.shared_memory_utilization",NA
+"9","misc_instructions","0.996644297469355"
+"10","eligible_warps_per_active_cycle","0.984411145271971"
+"11","num_of_sm","0"
+"12","duration","0"
+"13","gpu_id","0"
+"14","gst_request","0"

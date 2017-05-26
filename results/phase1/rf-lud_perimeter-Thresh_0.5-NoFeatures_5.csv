@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","sm_cta_launched","1.00093299264461"
+"2","active_cycles","1.00198510940745"
+"3","executed_control.flow_instructions","0.99885990416123"
+"4","multiprocessor_activity",NA
+"5","issued_ipc","0.997518926500583"
+"6","memory_clock","1.00963195837747"
+"7","duration","1.00989416220747"
+"8","gpu_id",NA
+"9","0","0.98688615288238"
+"10","sm_cta_launched","0.998986942568219"

@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","sm_cta_launched","0.989621004518086"
+"2","executed_load.store_instructions","0.988610763030298"
+"3","multiprocessor_activity","0.985687711876217"
+"4","achieved_occupancy",NA
+"5","device_memory_read_transactions","0.96064081383424"
+"6","theoretical_flops","1.0137091420637"
+"7","bandwith","1.1582214915491"
+"8","duration",NA
+"9","gpu_id","0.953063257808913"
+"10","0","0.974371334420001"

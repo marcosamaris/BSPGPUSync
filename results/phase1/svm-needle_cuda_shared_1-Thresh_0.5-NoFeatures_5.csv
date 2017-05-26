@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","shared_memory_load_transactions_per_request","1.02662688649608"
+"2","inst_issued2","0.990582221308788"
+"3","active_cycles","0.954814568724504"
+"4","multiprocessor_activity",NA
+"5","device_memory_read_transactions","0.992108223349837"
+"6","memory_clock","1.02671865435456"
+"7","duration","1.07978029468969"
+"8","gpu_id",NA
+"9","0","0.985622252332906"
+"10","shared_memory_load_transactions_per_request","1.00259067280887"

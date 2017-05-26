@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","issued_control.flow_instructions","0.99476114227215"
+"2","requested_global_store_throughput","0.987769079996788"
+"3","device_memory_read_throughput","0.982136679053003"
+"4","issued_ipc",NA
+"5","shared_memory_store_throughput","0.986573142161331"
+"6","theoretical_flops","1.00684430536721"
+"7","duration","1.03562430459664"
+"8","gpu_id",NA
+"9","0","1.00127520510947"
+"10","issued_control.flow_instructions","1.01688788377643"

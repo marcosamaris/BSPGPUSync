@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","device_memory_read_transactions","1.02488089019593"
+"2","achieved_occupancy","1.01956290295094"
+"3","device_memory_read_throughput","0.958606438775416"
+"4","flop_efficiency.peak_double.",NA
+"5","instructions_per_warp","1.00396397564237"
+"6","bus","1.00820625199392"
+"7","duration","1.10896784159617"
+"8","gpu_id",NA
+"9","0","0.984187550098151"
+"10","device_memory_read_transactions","0.989231182430277"

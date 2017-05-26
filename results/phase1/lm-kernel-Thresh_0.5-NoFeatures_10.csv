@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","elapsed_cycles_sm","1.00651752541412"
+"2","inst_issued2","1.01123382590535"
+"3","requested_global_load_throughput","0.986816154923892"
+"4","requested_global_store_throughput",NA
+"5","device_memory_read_throughput","0.973858789760117"
+"6","device_memory_write_throughput","0.980858858404655"
+"7","issued_ipc","0.971097780015364"
+"8","shared_memory_load_throughput",NA
+"9","shared_memory_store_throughput","0.973102884847547"
+"10","issued_control.flow_instructions","1.03770933198751"
+"11","theoretical_flops","0"
+"12","duration","0"
+"13","gpu_id","0"
+"14","elapsed_cycles_sm","0"

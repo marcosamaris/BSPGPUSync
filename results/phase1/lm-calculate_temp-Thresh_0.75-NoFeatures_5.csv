@@ -1,0 +1,12 @@
+"","","meanAcc"
+"1","device_memory_read_transactions","0.999404677012233"
+"2","gld_request","1.01729787908191"
+"3","inst_issued1","0.99576218325269"
+"4","achieved_occupancy",NA
+"5","l2_read_transactions","0.99506653386885"
+"6","bus","0.99251982308854"
+"7","bandwith","1.18798620888244"
+"8","global_memory",NA
+"9","duration","0.989739580008508"
+"10","gpu_id","1.00301249310253"
+"11","0","0.999404677012233"

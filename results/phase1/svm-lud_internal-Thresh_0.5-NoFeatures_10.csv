@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","sm_cta_launched","1.03805605938936"
+"2","inst_issued1","0.992991998528296"
+"3","inst_issued2","0.937033565947815"
+"4","multiprocessor_activity",NA
+"5","achieved_occupancy","0.998202810165334"
+"6","global_load_transactions","1.01283040332793"
+"7","global_store_transactions","1.12923023929945"
+"8","device_memory_read_transactions",NA
+"9","issued_control.flow_instructions","0.945541166047752"
+"10","executed_control.flow_instructions","1.00558731429189"
+"11","memory_clock","0"
+"12","duration","0"
+"13","gpu_id","0"
+"14","sm_cta_launched","0"

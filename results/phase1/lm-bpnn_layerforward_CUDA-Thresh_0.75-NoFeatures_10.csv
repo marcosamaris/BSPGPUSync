@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","grid.y","0.988097654991877"
+"2","active_cycles","1.02163910208834"
+"3","global_store_transactions","0.983662468101944"
+"4","inst_issued2",NA
+"5","multiprocessor_activity","1.00948499862064"
+"6","achieved_occupancy","1.02561722306744"
+"7","global_load_transactions","1.21496675173056"
+"8","issued_control.flow_instructions",NA
+"9","issued_load.store_instructions","0.995907235244758"
+"10","floating_point_operations.single_precision.","1.0160754543062"
+"11","bus","0"
+"12","bandwith","0"
+"13","duration","0"
+"14","gpu_id","0"

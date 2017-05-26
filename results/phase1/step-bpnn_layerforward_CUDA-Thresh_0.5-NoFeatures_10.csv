@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","grid.y","1.00918214758906"
+"2","global_load_transactions","0.99505485827093"
+"3","shared_load_transactions","0.990319314334735"
+"4","multiprocessor_activity",NA
+"5","achieved_occupancy","0.984214064790521"
+"6","device_memory_read_transactions","1.00837456429426"
+"7","issued_control.flow_instructions","1.18674546018813"
+"8","executed_control.flow_instructions",NA
+"9","fp_instructions.single.","0.891351198194103"
+"10","flop_efficiency.peak_single.","0.912988970437445"
+"11","bus","0"
+"12","duration","0"
+"13","gpu_id","0"
+"14","grid.y","0"

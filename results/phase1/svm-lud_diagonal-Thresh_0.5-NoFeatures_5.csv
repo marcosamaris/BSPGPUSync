@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","static.smem","1.02345160571042"
+"2","flop_efficiency.peak_single.","0.986763090779784"
+"3","l2_throughput_.reads.","1.01275341563583"
+"4","device_memory_read_throughput",NA
+"5","ecc_throughput","1.00967451717365"
+"6","max_clock_rate","0.98747273293969"
+"7","duration","1.04418405224721"
+"8","gpu_id",NA
+"9","0","0.955360870779952"
+"10","static.smem","0.964696770565726"

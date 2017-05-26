@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","input.size.1","1.0074183022174"
+"2","issued_ipc","1.00594697641209"
+"3","global_load_transactions","1.00910843255941"
+"4","multiprocessor_activity",NA
+"5","l1.shared_memory_utilization","1.00541904261567"
+"6","bus","0.95956647464122"
+"7","duration","1.02973921002614"
+"8","gpu_id",NA
+"9","0","0.974031044767353"
+"10","input.size.1","1.01755644556801"

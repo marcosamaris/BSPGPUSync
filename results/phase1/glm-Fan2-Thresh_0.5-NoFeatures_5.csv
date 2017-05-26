@@ -1,0 +1,11 @@
+"","","meanAcc"
+"1","sm_cta_launched","1.04465474942475"
+"2","issued_control.flow_instructions","0.992115336458339"
+"3","gst_request","0.985996886775093"
+"4","inst_issued1",NA
+"5","executed_load.store_instructions","0.985571214508956"
+"6","theoretical_flops","1.01218035576934"
+"7","duration","0.99189878722017"
+"8","gpu_id",NA
+"9","0","0.982949848590893"
+"10","sm_cta_launched","1.03308842026334"

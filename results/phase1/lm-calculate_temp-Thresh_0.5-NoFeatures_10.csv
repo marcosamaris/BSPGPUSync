@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","device_memory_read_transactions","1.02768086786672"
+"2","gld_request","1.01035849393785"
+"3","inst_issued1","0.985500497436403"
+"4","multiprocessor_activity",NA
+"5","achieved_occupancy","1.00076984034264"
+"6","device_memory_read_throughput","0.977673011030345"
+"7","global_load_transactions_per_request","1.07459516832661"
+"8","instructions_per_warp",NA
+"9","flop_efficiency.peak_single.","1.00248386367208"
+"10","flop_efficiency.peak_double.","0.986205308014309"
+"11","bus","0"
+"12","duration","0"
+"13","gpu_id","0"
+"14","device_memory_read_transactions","0"
