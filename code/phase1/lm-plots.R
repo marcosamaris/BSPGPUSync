@@ -24,6 +24,7 @@ source("./code/include/sharedFunctions.R")
 
 scale_colour_manual(values=cbbPalette)
 set.seed(5)
+
 NroSamples <- c(57,57, rep(100, 11))
 for(kernelApp in c(1:7, 9:13)) {
     tempFeatures <- data.frame()
@@ -31,20 +32,13 @@ for(kernelApp in c(1:7, 9:13)) {
         tempAppGpu <- data.frame(cbind(fread(file = paste("./datasets/",names(kernelsDict[kernelApp]), "-", gpus[gpu,'gpu_name'], ".csv", sep=""),check.names = TRUE,stringsAsFactors = FALSE), gpus[gpu,]))
         tempFeatures <- rbind(tempFeatures, tempAppGpu[sample(nrow(tempAppGpu), NroSamples[kernelApp]),])
     }
-
-    # control.flow_function_unit_utilization
     
     tempGpuData <- tempFeatures[, names(tempFeatures) %in% c(names(gpus))]
     tempFeatures <- tempFeatures[,!names(tempFeatures) %in% c(names(gpus))]
     tempDuration <- tempFeatures$duration
     
-    # tempFeatures$issued_control.flow_instructions <-  NULL
-    # # tempFeatures$executed_control.flow_instructions <-  NULL
-    # tempFeatures$control.flow_instructions <- NULL
-    # tempFeatures$inst_issued2 <- NULL
-    # tempFeatures$sm_cta_launched<- NULL
-    
-    
+    # tempFeatures$gst_request <- NULL
+    # tempFeatures$gld_request <- NULL
     
     nums <- sapply(tempFeatures, is.numeric)
     tempFeatures <- tempFeatures[,nums]
@@ -74,6 +68,8 @@ for(kernelApp in c(1:7, 9:13)) {
     if (kernelApp == 7) {
         tempFeatures$executed_load.store_instructions <-  NULL
         tempFeatures$control.flow_function_unit_utilization <- NULL
+        tempFeatures$gst_request <- NULL
+        tempFeatures$gld_request <- NULL
     }
     
     
@@ -124,7 +120,7 @@ for(kernelApp in c(1:7, 9:13)) {
     
     Result <- data.frame()
     # "lm", "step", "glm", "svm", "rf", "em"
-    for(iML in c("em")){
+    for(iML in c("lm")){
         
         for(threshCorr in c(0.5)){
             tempData <- data.frame()
@@ -220,13 +216,13 @@ for(kernelApp in c(1:7, 9:13)) {
                                     gpu_id = tempGpuData$gpu_id
                                     )
                     
-                    png(filename = paste("./images/phase1/scatterPlot/", names(kernelsDict[kernelApp]), " Thresh=", threshCorr, " NParam=", numberFeatures, ".png", sep=""), width = 1600, height = 800)
-                    scatterplotMatrix(Data,cex.labels =  1.5)
-                    dev.off()
+                    # png(filename = paste("./images/phase1/scatterPlot/", names(kernelsDict[kernelApp]), "-Thresh=", threshCorr, "-NParam=", numberFeatures, ".png", sep=""), width = 1600, height = 800)
+                    # scatterplotMatrix(Data,cex.labels =  1.5)
+                    # dev.off()
                     
                     meanAcc <- array()
-                    # png(filename = paste("./images/phase1/fitModels/", iML, "-", names(kernelsDict[kernelApp]), " Thresh=", threshCorr, " NParam=", numberFeatures, ".png", sep=""), width = 1600, height = 800)
-                    # par(family = "Times", mfrow=c(2,4), mai = c(1, 1, 0.5, 0.5))
+                    png(filename = paste("./images/phase1/fitModels/", iML, "-", names(kernelsDict[kernelApp]), " Thresh=", threshCorr, " NParam=", numberFeatures, ".png", sep=""), width = 1600, height = 800)
+                    par(family = "Times", mfrow=c(2,4), mai = c(1, 1, 0.5, 0.5))
                     for(gpu in c(1,2,3,5, 6,7,9,10)) {
                         trainingData <- subset(Data, gpu_id !=  gpu)  # training data
                         testData  <- subset(Data, gpu_id ==  gpu)   # test data
@@ -278,11 +274,11 @@ for(kernelApp in c(1:7, 9:13)) {
                         # predictions <- predict(fit, testData)
                         
                         
-                        # base <- residuals(fit)
-                        # qqnorm(base, ylab="Studentized Residual (Fitted Model)", 
-                        #        xlab="t Quantiles", 
-                        #        main=paste(gpus[gpu,'gpu_name'], " Thresh= ", threshCorr, " NParam= ", numberFeatures, sep=""), cex.lab = 2.5, cex.main=2.5,cex=1.5,cex.axis=2)
-                        # qqline(base, col = 2,lwd=5)
+                        base <- residuals(fit)
+                        qqnorm(base, ylab="Studentized Residual (Fitted Model)",
+                               xlab="t Quantiles",
+                               main=paste(gpus[gpu,'gpu_name'], " Thresh= ", threshCorr, " NParam= ", numberFeatures, sep=""), cex.lab = 2.5, cex.main=2.5,cex=1.5,cex.axis=2)
+                        qqline(base, col = 2,lwd=5)
                         # lines(predictions, col= "blue", lwd=5)
                         
                         # print(paste("kernel=", names(kernelsDict[kernelApp]), " GPU=", gpus[gpu,'gpu_name'],  " threshCorr=", threshCorr, " numberFeatures=", numberFeatures))
@@ -312,7 +308,7 @@ for(kernelApp in c(1:7, 9:13)) {
                         Result <- rbind(Result, tempResult)
                         meanAcc[gpu] <- mean(accuracy)
                     }
-                    # dev.off()
+                    dev.off()
                     # PlotFeatures(Data,numberFeatures)
                     
                     png(filename = paste("./images/phase1/features/", names(kernelsDict[kernelApp]),"-Thresh_", threshCorr, "-NoFeatures_",numberFeatures, ".png", sep=""), width = 1200, height = 2800)

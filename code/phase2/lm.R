@@ -1,4 +1,3 @@
-library("pls")
 library("MASS")
 library("randomForest")
 library("caret")
@@ -8,15 +7,17 @@ library("data.table")
 library("ff")
 library("doParallel")
 
-library("pls")
 
 dirpath <- "~/Dropbox/Doctorate/GIT/BSyncGPGPU/"
 setwd(paste(dirpath, sep=""))
 
-source("./R-code/common.R")
+source("./code/include/common.R")
+source("./code/include/sharedFunctions.R")
+
+
 set.seed(5)
 NroSamples <- c(57,57, rep(100, 11))
-for(gpu in c(1, 2, 6, 7, 9)) {
+for(gpu in c(1)) {
     tempFeatures <- data.frame()
     for(kernelApp in c(1:7, 9:13)){
         # data.frame(cbind(fread(file = paste("./datasets/",names(kernelsDict[kernelApp]), "-", gpus[gpu,'gpu_name'], ".csv", sep=""),check.names = TRUE), gpus[gpu,]))
@@ -39,6 +40,13 @@ for(gpu in c(1, 2, 6, 7, 9)) {
     
     tempFeatures <- tempFeatures[,apply(tempFeatures, 2, function(v) var(v, na.rm=TRUE)!=0)]
     
+    
+    if (gpu == 1) {
+        tempFeatures$executed_control.flow_instructions <- NULL
+    }
+    
+    
+    
     corFeatures <- cor(getElement(tempFeatures, "duration"), tempFeatures, method = "spearman", use = "complete.obs")
     
     tempFeatures$duration <- NULL
@@ -47,33 +55,37 @@ for(gpu in c(1, 2, 6, 7, 9)) {
     Result <- data.frame()
     
     # "lm", "step", "glm", "svm", "rf"
-    for(iML in c("rf")){
+    for(iML in c("lm")){
     for(threshCorr in c(0.5, 0.75)){
-        tempDataset <- data.frame()
-        tempDataset <- tempFeatures[which(abs(corFeatures) >= threshCorr)]
+        tempData <- data.frame()
+        tempData <- tempFeatures[which(abs(corFeatures) >= threshCorr)]
         
-        if(length(tempDataset) > 10){
-            hcFeatures <- hclust(as.dist(abs(cor(tempDataset, 
-                                                 method = "spearman", use = "complete.obs"))^2, 
-                                         upper = FALSE), method = "average")
+        if(length(tempData) > 10){
+            hcFeatures <- hclust(as.dist(1-abs(cor(apply(tempData, 2, normalizeLogMax),
+                                                   method = "spearman", use = "complete.obs"))), method = "average")
             
-            for(numberFeatures in c(10, 5)){
+            for(numberFeatures in c(5)){
                 cutedTree <- cutree(hcFeatures, k=numberFeatures)
                 # table(cutedTree)
                 
                 
                 parNameTemp <- vector()
                 for(numberCluster in 1:numberFeatures){
-                    parNameTemp[numberCluster] <- names(tempDataset[cutedTree == numberCluster][1])
+                    Tempvariance <-  apply(apply(tempData[cutedTree == numberCluster],2, normalizeLogMax), 2,var)
+                    parNameTemp[numberCluster] <- names(sort(Tempvariance)[length(Tempvariance)])
                 }
                 
-                Data <- tempDataset[parNameTemp]
-                Data <- cbind(Data, duration=tempDuration, kernel=tempKernel)
+                Data <- tempData[parNameTemp]
+                
+                Data <- data.frame(Data <- apply(Data, 2, normalizeLogMax), 
+                              duration=normalizeLogMax(tempDuration), 
+                              kernel=tempKernel)
+                
                 
                 for(kernelApp in c(1:7, 9:13)) {
                     
-                    trainingData <- log(subset(Data,  kernel !=  kernelApp) + 0.000000000000001)  # training data
-                    testData  <- log(subset(Data, kernel ==  kernelApp) + 0.000000000000001)   # test data
+                    trainingData <- subset(Data,  kernel !=  kernelApp)  # training data
+                    testData  <- subset(Data, kernel ==  kernelApp)   # test data
                     
                     trainingDuration <- trainingData$duration
                     trainingData$duration <- NULL
@@ -98,8 +110,8 @@ for(gpu in c(1, 2, 6, 7, 9)) {
 
                     predictions <- predict(fit, testData)
                     
-                    predictions <- 2^predictions - 0.000000000000001
-                    testDuration <- 2^testDuration - 0.000000000000001
+                    # predictions <- 2^predictions - 0.000000000000001
+                    # testDuration <- 2^testDuration - 0.000000000000001
                     accuracy <- predictions/testDuration
                     
                     tempResult <- data.frame(gpus[gpu,'gpu_name'], names(kernelsDict[kernelApp]), testDuration, predictions, accuracy, threshCorr, numberFeatures)

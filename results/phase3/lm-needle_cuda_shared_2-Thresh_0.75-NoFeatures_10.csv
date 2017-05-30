@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","elapsed_cycles_sm",NA
+"2","global_store_transactions",NA
+"3","misc_instructions",NA
+"4","active_cycles",NA
+"5","multiprocessor_activity",NA
+"6","device_memory_read_transactions",NA
+"7","executed_control.flow_instructions",NA
+"8","executed_load.store_instructions",NA
+"9","fp_instructions.single.",NA
+"10","load.store_instructions","0.988316238476453"
+"11","duration","0"
+"12","kernel","0"
+"13","elapsed_cycles_sm","0"
+"14","global_store_transactions","0"

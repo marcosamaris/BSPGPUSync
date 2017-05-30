@@ -1,0 +1,15 @@
+"","V1","V2"
+"1","active_cycles",NA
+"2","device_memory_read_transactions",NA
+"3","warps_launched",NA
+"4","sm_cta_launched",NA
+"5","multiprocessor_activity",NA
+"6","executed_ipc",NA
+"7","requested_global_load_throughput",NA
+"8","fp_instructions.single.",NA
+"9","floating_point_operations.single_precision_add.",NA
+"10","flop_efficiency.peak_single.","0.989125652089481"
+"11","theoretical_flops","0"
+"12","memory_clock","0"
+"13","duration","0"
+"14","kernel","0"

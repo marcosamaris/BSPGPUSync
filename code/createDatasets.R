@@ -175,6 +175,7 @@ for (gpu in c(1,2,3,5, 6,7,9,10)) {
         tempFeatures$system_memory_write_throughput <-  NULL
         tempFeatures$system_memory_utilization <- NULL
         
+        tempFeatures$inst_issued2 <- NULL
         
         
         tempFeatures$device <- NULL
