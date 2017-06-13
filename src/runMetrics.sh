@@ -2,7 +2,7 @@
 
 gpu=Tesla
 
-declare -a apps=( )
+declare -a apps=( hotspot )
 
 declare -A execApps
 execApps["backprop"]="./backprop " 
@@ -51,8 +51,8 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "hotspot" ]]; then
-        for i in 64 512 1024; do
-            for j in `seq 32 32 4096 `; do
+        for i in 64 128 256 512 1024 ; do
+            for j in `seq 256 256 1024 `; do
                 nvprof --metrics all --events all   --print-gpu-trace --csv -u s ${execApps["${app}"]} ${i} 2 ${j} ../../data/hotspot/temp_${i} ../../data/hotspot/power_${i} output.out 2> temp
 				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' | grep $gpu >> ../../../metrics/${app}-metrics.csv
 				

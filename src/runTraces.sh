@@ -2,7 +2,7 @@
 
 gpu=Tesla
 
-declare -a apps=( hotspot hotspot3D lavaMD lud nw )
+declare -a apps=(  )
 #gaussian
 
 declare -A execApps
@@ -15,6 +15,8 @@ execApps["lavaMD"]="././lavaMD "
 execApps["lud"]="./lud_cuda " 
 execApps["nw"]="./needle " 
 execApps["pathfinder"]="./pathfinder "
+
+execApps["simpleCUFFT"]="./simpleCUFFT "
 
 cd rodinia/cuda/
 
@@ -53,8 +55,8 @@ for app in "${apps[@]}"; do
     fi
     
     if [[ "${app}" == "hotspot" ]]; then
-        for i in 64 512 1024; do
-            for j in `seq 32 32 4096 `; do
+        for i in  64 128 256 512 1024; do
+            for j in `seq 256 256 1024 `; do
                 { time nvprof --print-gpu-trace --csv -u s ${execApps["${app}"]} ${i} 2 ${j} ../../data/hotspot/temp_${i} ../../data/hotspot/power_${i} output.out 2> temp ; } 2> tempTime
 				cat temp | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' | grep $gpu >> ../../../traces/${app}-traces.csv
 				cat tempTime | awk -v var=$i  -v var2=$j '{print var"," var2"," $0}' >> ../../../traces/${app}-time.csv
@@ -110,10 +112,12 @@ for app in "${apps[@]}"; do
     rm -f tempTime temp     
   
     cd ..
-done
-    
+done   
 
 cd ../
 make clean
 cd ../
+
+
+
 
