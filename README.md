@@ -1,6 +1,7 @@
-# BSPGPUSync
+# Feature Extraction and Machine Learning Techniques to Predict Execution Times of Irregular GPU Applications
 
-In this work we propose a BSP-based model for predicting the
-performance of GPU applications, offering a solution to tackle parallel
-problems in GPU massively parallel architectures. We used the model to
-predict the performance of irregular applications in Rodinia benchmarks.
+The prediction of performance of irregular application executed over GPUs is a great challenge and is essential for efficient job schedulers. There are different approaches to do this, such as analytical modeling, and machine learning techniques. Machine learning require large training sets and reliable features, but they can capture the interactions between architecture and software without manual intervention.
+
+In this work, we perform a statistical and machine learning approach to predict running time of irregular GPU kernel functions. For this, we propose a process of feature extraction. In this process we implement a correlation analysis and hierarchical clustering to reduce the number of features or dimensionality. Finally, we use three different machines learning algorithms, Linear Regression, Support Vector Machines and Random Forests. Our experiments were done with 12 CUDA functions belonging to 7 real-world applications of the Rodinia benchmark suite. We collected data over 8 NVIDIA GPUs in different machines. 
+
+In the folder ./code are source codes in R, to run the experiments and to create the images of the results. The folder ./phase2 corresponds to the context 1 of the work, and the folder ./phase3 inside the folder code/ correspond to the second context of the work.
